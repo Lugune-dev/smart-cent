@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+    <title>Smarti-Cent · 8 Pages with i18n</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+        
+        /* ----- RESET & VARIABLES (light / dark) ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        :root {
+            /* Brand Colors: Deep Blue, Leaf Green, Golden Yellow */
+            --brand-blue: #0A1E2F;
+            --brand-green: #1E7B4C;
+            --brand-gold: #CB8B3A;
+            
+            --bg-main: #f4f8fb;
+            --bg-card: rgba(255, 255, 255, 0.7);
+            --bg-nav: rgba(255, 255, 255, 0.85);
+            --bg-footer: #eef3f8;
+            --text-primary: var(--brand-blue);
+            --text-secondary: #2c4c66;
+            --text-muted: #537592;
+            --border-light: rgba(10, 30, 47, 0.08);
+            --shadow-sm: 0 10px 30px rgba(10, 30, 47, 0.05);
+            --shadow-hover: 0 20px 50px rgba(30, 123, 76, 0.15);
+            --accent-green: var(--brand-green);
+            --accent-gold: var(--brand-gold);
+            --accent-soft: rgba(30, 123, 76, 0.08);
+            --card-radius: 24px;
+            --nav-blur: blur(16px);
+            --glass-border: rgba(255, 255, 255, 0.6);
+        }
+
+        [data-theme="dark"] {
+            --brand-blue: #e5edf2;
+            --bg-main: #06111a;
+            --bg-card: rgba(15, 30, 45, 0.6);
+            --bg-nav: rgba(6, 17, 26, 0.85);
+            --bg-footer: #040c13;
+            --text-primary: #f0f5f9;
+            --text-secondary: #c0d3e2;
+            --text-muted: #8aa6be;
+            --border-light: rgba(255, 255, 255, 0.06);
+            --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.4);
+            --shadow-hover: 0 20px 50px rgba(47, 161, 99, 0.2);
+            --accent-green: #2fa163;
+            --accent-gold: #e8a645;
+            --accent-soft: rgba(47, 161, 99, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            background: var(--bg-main);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: radial-gradient(circle at top right, rgba(30, 123, 76, 0.05) 0%, transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(203, 139, 58, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        [data-theme="dark"] body {
+            background-image: radial-gradient(circle at top right, rgba(47, 161, 99, 0.05) 0%, transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(232, 166, 69, 0.05) 0%, transparent 40%);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        /* ----- NAVBAR (glass) ----- */
+        .navbar {
+            background: var(--bg-nav);
+            backdrop-filter: var(--nav-blur);
+            -webkit-backdrop-filter: var(--nav-blur);
+            border-bottom: 1px solid var(--border-light);
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: var(--bg-card);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            border: 2px solid var(--accent-green);
+        }
+
+        /* Soft glowing aura behind the logo */
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 130%;
+            height: 130%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(30, 123, 76, 0.4) 0%, rgba(203, 139, 58, 0.2) 70%, transparent 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            filter: blur(10px);
+        }
+
+        .logo-icon img.logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 1;
+        }
+
+        .logo-area:hover .logo-icon {
+            transform: translateY(-2px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 6px 15px rgba(30, 123, 76, 0.25);
+        }
+
+        .logo-area:hover .logo-icon::before {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+            animation: pulseGlow 2.5s infinite alternate;
+        }
+
+        .logo-area:hover .logo-icon img.logo-img {
+            transform: scale(1.08) rotate(-2deg);
+        }
+        
+        [data-theme="dark"] .logo-area:hover .logo-icon {
+            box-shadow: 0 6px 15px rgba(59, 155, 106, 0.4);
+        }
+
+        @keyframes pulseGlow {
+            0% { filter: blur(10px) hue-rotate(0deg); }
+            100% { filter: blur(14px) hue-rotate(30deg); }
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: -0.8px;
+            color: var(--text-primary);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .logo-text span {
+            color: var(--accent-green);
+            background: linear-gradient(135deg, var(--accent-green), #158f52);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .logo-text span::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            bottom: 2px;
+            left: 0;
+            background: var(--accent-gold);
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .logo-area:hover .logo-text {
+            transform: translateX(4px);
+        }
+
+        .logo-area:hover .logo-text span::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* small screens: show compact logo only */
+        @media (max-width: 420px) {
+            .logo-text { display: none; }
+            .logo-icon { width: 48px; height: 48px; }
+            .logo-icon img.logo-img { padding: 4px; }
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 6px;
+            background: var(--bg-card);
+            padding: 5px 10px;
+            border-radius: 60px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: 0.15s;
+        }
+        .lang-btn.active {
+            background: var(--accent-green);
+            color: white;
+            box-shadow: 0 2px 8px rgba(30, 123, 76, 0.3);
+        }
+        .lang-btn:hover:not(.active) {
+            background: var(--accent-soft);
+            color: var(--text-primary);
+        }
+
+        .theme-toggle {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 60px;
+            padding: 8px 14px;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-sm);
+            transition: 0.15s;
+        }
+        .theme-toggle:hover {
+            background: var(--accent-soft);
+            transform: scale(1.02);
+        }
+
+        /* ----- PAGE NAV (8 buttons) ----- */
+        .page-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 12px;
+            padding: 16px 0 6px;
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 28px;
+        }
+
+        .page-btn {
+            background: var(--bg-card);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-light);
+            padding: 10px 22px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+        .page-btn i {
+            font-size: 1rem;
+            color: var(--accent-gold);
+            transition: color 0.3s;
+        }
+        .page-btn.active {
+            background: linear-gradient(135deg, var(--accent-green), #158f52);
+            color: white;
+            box-shadow: 0 8px 20px rgba(30, 123, 76, 0.3);
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+        .page-btn.active i {
+            color: white;
+        }
+        .page-btn:hover:not(.active) {
+            background: var(--bg-card);
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(30, 123, 76, 0.1);
+        }
+
+        /* ----- PAGES ----- */
+        .page-content {
+            display: block;
+            margin: 10px 0 40px;
+        }
+
+        .page {
+            display: none;
+            animation: fade 0.25s ease;
+        }
+        .page.active-page {
+            display: block;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0.4;
+                transform: translateY(6px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header {
+            margin-bottom: 20px;
+        }
+        .page-header h2 {
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 600px;
+        }
+
+        /* service cards */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            margin-top: 24px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: var(--card-radius);
+            padding: 32px 28px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            border-top: 1px solid var(--glass-border);
+            border-left: 1px solid var(--glass-border);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(30, 123, 76, 0.04) 100%);
+            z-index: -1;
+            transition: opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        .service-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-8px);
+            border-color: rgba(30, 123, 76, 0.3);
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 2.4rem;
+            background: linear-gradient(135deg, var(--accent-soft), transparent);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            color: var(--accent-green);
+            margin-bottom: 24px;
+            border: 1px solid var(--border-light);
+            box-shadow: inset 0 2px 4px var(--glass-border);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .service-card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, var(--accent-green), #158f52);
+            color: white;
+            box-shadow: 0 10px 25px rgba(30, 123, 76, 0.3);
+            border-color: var(--accent-green);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+            transition: color 0.3s ease;
+        }
+        
+        .service-card:hover h3 {
+            color: var(--accent-green);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .service-tags span {
+            background: var(--accent-soft);
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            border: 1px solid var(--border-light);
+        }
+
+        .footer {
+            background: var(--bg-footer);
+            border-top: 1px solid var(--border-light);
+            padding: 28px 0;
+            margin-top: auto;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .footer i {
+            color: var(--accent-green);
+            margin: 0 4px;
+        }
+
+        @media (max-width: 700px) {
+            .navbar .container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .nav-controls {
+                justify-content: center;
+            }
+            .logo-area {
+                justify-content: center;
+            }
+            .page-nav {
+                gap: 6px;
+            }
+            .page-btn {
+                font-size: 0.75rem;
+                padding: 6px 12px;
+            }
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-area">
+                <div class="logo-icon"><img src="image.png" alt="Smarti-Cent logo" class="logo-img"  /></div>
+                <div class="logo-text">Smarti<span>Cent</span></div>
+            </div>
+            <div class="nav-controls">
+                <!-- language switch with i18n integration -->
+                <div class="lang-switch" id="langSwitch">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="sw">SW</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="toggle theme">
+                    <i class="fas fa-moon" id="themeIcon"></i> <span id="themeLabel">Dark</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- 8 page navigation -->
+        <div class="page-nav" id="pageNav">
+            <button class="page-btn active" data-page="page1"><i class="fas fa-briefcase"></i> <span data-i18n="nav.consult">Consult</span></button>
+            <button class="page-btn" data-page="page2"><i class="fas fa-chart-line"></i> <span data-i18n="nav.career">Career</span></button>
+            <button class="page-btn" data-page="page3"><i class="fas fa-wallet"></i> <span data-i18n="nav.finlit">FinLit</span></button>
+            <button class="page-btn" data-page="page4"><i class="fas fa-handshake"></i> <span data-i18n="nav.mentor">Mentor</span></button>
+            <button class="page-btn" data-page="page5"><i class="fas fa-microchip"></i> <span data-i18n="nav.digital">Digital</span></button>
+            <button class="page-btn" data-page="page6"><i class="fas fa-users"></i> <span data-i18n="nav.youth">Youth</span></button>
+            <button class="page-btn" data-page="page7"><i class="fas fa-rocket"></i> <span data-i18n="nav.startup">Startup</span></button>
+            <button class="page-btn" data-page="page8"><i class="fas fa-globe"></i> <span data-i18n="nav.impact">Impact</span></button>
+        </div>
+
+        <!-- ===== 8 PAGES ===== -->
+        <div class="page-content" id="pageContent">
+            <!-- PAGE 1: BUSINESS CONSULTANCY -->
+            <div id="page1" class="page active-page">
+                <div class="page-header">
+                    <h2 data-i18n="page1.title">📋 Business Consultancy</h2>
+                    <p data-i18n="page1.sub">Registration · advisory · tax & management support</p>
+                </div>
+                <div class="service-grid">
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-building"></i></div><h3 data-i18n="p1c1.title">Registration</h3><p data-i18n="p1c1.desc">Company & business registration, licenses, and permits.</p><div class="service-tags"><span>LLC</span><span>NGO</span><span>SME</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-user-tie"></i></div><h3 data-i18n="p1c2.title">Advisory</h3><p data-i18n="p1c2.desc">Strategic advisory, risk management, and operational efficiency.</p><div class="service-tags"><span>Growth</span><span>Risk</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-people-arrows"></i></div><h3 data-i18n="p1c3.title">Management Support</h3><p data-i18n="p1c3.desc">Team structuring, HR, and performance systems.</p><div class="service-tags"><span>HR</span><span>Ops</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-file-invoice"></i></div><h3 data-i18n="p1c4.title">Tax Compliance</h3><p data-i18n="p1c4.desc">Tax planning, filing, and compliance advisory.</p><div class="service-tags"><span>VAT</span><span>Payroll</span></div></div>
+                </div>
+            </div>
+
+            <!-- PAGE 2: CAREER -->
+            <div id="page2" class="page">
+                <div class="page-header"><h2 data-i18n="page2.title">🚀 Career Development</h2><p data-i18n="page2.sub">Corporate training & professional growth guidance</p></div>
+                <div class="service-grid">
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div><h3 data-i18n="p2c1.title">Corporate Training</h3><p data-i18n="p2c1.desc">Workshops, soft skills, and leadership programs.</p><div class="service-tags"><span>Leadership</span><span>Communication</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-bullseye"></i></div><h3 data-i18n="p2c2.title">Professional Growth</h3><p data-i18n="p2c2.desc">Career mapping, mentorship, and upskilling paths.</p><div class="service-tags"><span>Mentorship</span><span>Upskilling</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-certificate"></i></div><h3 data-i18n="p2c3.title">Certifications</h3><p data-i18n="p2c3.desc">Industry-recognized certifications and badges.</p><div class="service-tags"><span>PMP</span><span>Agile</span></div></div>
+                </div>
+            </div>
+
+            <!-- PAGE 3: FINANCIAL LITERACY -->
+            <div id="page3" class="page">
+                <div class="page-header"><h2 data-i18n="page3.title">💰 Financial Literacy</h2><p data-i18n="page3.sub">Money management · investment · budgeting</p></div>
+                <div class="service-grid">
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-piggy-bank"></i></div><h3 data-i18n="p3c1.title">Money Management</h3><p data-i18n="p3c1.desc">Personal & business cash flow, saving strategies.</p><div class="service-tags"><span>Budget</span><span>Savings</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-chart-pie"></i></div><h3 data-i18n="p3c2.title">Investment Planning</h3><p data-i18n="p3c2.desc">Portfolio, retirement, and wealth building.</p><div class="service-tags"><span>Stocks</span><span>Bonds</span><span>RealEstate</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-calculator"></i></div><h3 data-i18n="p3c3.title">Budgeting</h3><p data-i18n="p3c3.desc">Zero-based, forecasting, and variance analysis.</p><div class="service-tags"><span>Forecast</span><span>Variance</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div><h3 data-i18n="p3c4.title">Advisory</h3><p data-i18n="p3c4.desc">One-on-one financial advisory for entrepreneurs.</p><div class="service-tags"><span>Debt</span><span>Equity</span></div></div>
+                </div>
+            </div>
+
+            <!-- PAGE 4: MENTORSHIP -->
+            <div id="page4" class="page">
+                <div class="page-header"><h2 data-i18n="page4.title">🧭 Entrepreneurship Mentorship</h2><p data-i18n="page4.sub">Innovation · sustainability · upscaling</p></div>
+                <div class="service-grid">
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-lightbulb"></i></div><h3 data-i18n="p4c1.title">Innovation Guide</h3><p data-i18n="p4c1.desc">Design thinking, lean startup, and ideation.</p><div class="service-tags"><span>Lean</span><span>MVP</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-leaf"></i></div><h3 data-i18n="p4c2.title">Sustainability</h3><p data-i18n="p4c2.desc">ESG, circular economy, and long-term resilience.</p><div class="service-tags"><span>ESG</span><span>Circular</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-arrow-up"></i></div><h3 data-i18n="p4c3.title">Upscaling Tips</h3><p data-i18n="p4c3.desc">Scaling operations, market expansion, and funding.</p><div class="service-tags"><span>Growth</span><span>Series A</span></div></div>
+                </div>
+            </div>
+
+            <!-- PAGE 5: DIGITAL -->
+            <div id="page5" class="page">
+                <div class="page-header"><h2 data-i18n="page5.title">📱 Digital Innovation</h2><p data-i18n="page5.sub">Digital business solutions · financial tools</p></div>
+                <div class="service-grid">
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><h3 data-i18n="p5c1.title">Digital Solutions</h3><p data-i18n="p5c1.desc">E-commerce, automation, and digital strategy.</p><div class="service-tags"><span>Ecom</span><span>Automation</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-chart-simple"></i></div><h3 data-i18n="p5c2.title">Financial Tracking</h3><p data-i18n="p5c2.desc">Dashboards, real-time analytics, and reporting.</p><div class="service-tags"><span>Analytics</span><span>KPI</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-toolbox"></i></div><h3 data-i18n="p5c3.title">Resource Management</h3><p data-i18n="p5c3.desc">Inventory, CRM, and workflow optimization.</p><div class="service-tags"><span>CRM</span><span>Inventory</span></div></div>
+                </div>
+            </div>
+
+            <!-- PAGE 6: YOUTH -->
+            <div id="page6" class="page">
+                <div class="page-header"><h2 data-i18n="page6.title">🧑‍🎓 Youth Empowerment</h2><p data-i18n="page6.sub">Skills, internships, and financial independence</p></div>
+                <div class="service-grid">
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-graduation-cap"></i></div><h3 data-i18n="p6c1.title">Youth Skills</h3><p data-i18n="p6c1.desc">Digital literacy, public speaking, and teamwork.</p><div class="service-tags"><span>Soft skills</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-briefcase"></i></div><h3 data-i18n="p6c2.title">Internships</h3><p data-i18n="p6c2.desc">Placement, mentorship, and real-world exposure.</p><div class="service-tags"><span>Placement</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-coins"></i></div><h3 data-i18n="p6c3.title">Financial Independence</h3><p data-i18n="p6c3.desc">Earning, saving, and investing for young adults.</p><div class="service-tags"><span>Savings</span><span>Invest</span></div></div>
+                </div>
+            </div>
+
+            <!-- PAGE 7: STARTUP -->
+            <div id="page7" class="page">
+                <div class="page-header"><h2 data-i18n="page7.title">🚀 Startup Boost</h2><p data-i18n="page7.sub">Ideation · funding · go-to-market</p></div>
+                <div class="service-grid">
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-rocket"></i></div><h3 data-i18n="p7c1.title">Go-to-Market</h3><p data-i18n="p7c1.desc">Launch strategy, customer acquisition, and branding.</p><div class="service-tags"><span>GTM</span><span>Brand</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div><h3 data-i18n="p7c2.title">Funding Support</h3><p data-i18n="p7c2.desc">Pitch deck, investor relations, and grants.</p><div class="service-tags"><span>Pitch</span><span>Grants</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-people-group"></i></div><h3 data-i18n="p7c3.title">Team Building</h3><p data-i18n="p7c3.desc">Hiring, culture, and co-founder alignment.</p><div class="service-tags"><span>Culture</span><span>Co-founder</span></div></div>
+                </div>
+            </div>
+
+            <!-- PAGE 8: IMPACT -->
+            <div id="page8" class="page">
+                <div class="page-header"><h2 data-i18n="page8.title">🌍 Impact & Sustainability</h2><p data-i18n="page8.sub">Social enterprise · ESG · community</p></div>
+                <div class="service-grid">
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-seedling"></i></div><h3 data-i18n="p8c1.title">Social Enterprise</h3><p data-i18n="p8c1.desc">Purpose-driven business models and impact measurement.</p><div class="service-tags"><span>B Corp</span><span>Impact</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-recycle"></i></div><h3 data-i18n="p8c2.title">Circular Economy</h3><p data-i18n="p8c2.desc">Waste reduction, upcycling, and green supply chains.</p><div class="service-tags"><span>Green</span><span>Upcycle</span></div></div>
+                    <div class="service-card"><div class="card-icon"><i class="fas fa-community"></i></div><h3 data-i18n="p8c3.title">Community Engagement</h3><p data-i18n="p8c3.desc">Local partnerships, volunteering, and outreach.</p><div class="service-tags"><span>Outreach</span><span>Partnership</span></div></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p><i class="fas fa-seedling"></i> <span data-i18n="footer.text">Smarti-Cent · empowering youth & small entrepreneurs with real world money skills</span> · <span id="footerYear">2026</span></p>
+            <p style="margin-top:8px; font-size:0.8rem;"><i class="fas fa-globe"></i> EN · SW · FR  |  <i class="fas fa-adjust"></i> <span data-i18n="footer.theme">light / dark</span></p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            "use strict";
+
+            // ----- I18N DICTIONARY (EN, SW, FR) -----
+            const i18n = {
+                en: {
+                    nav: { consult: "Consult", career: "Career", finlit: "FinLit", mentor: "Mentor", digital: "Digital",
+                        youth: "Youth", startup: "Startup", impact: "Impact" },
+                    page1: { title: "📋 Business Consultancy", sub: "Registration · advisory · tax & management support" },
+                    page2: { title: "🚀 Career Development", sub: "Corporate training & professional growth guidance" },
+                    page3: { title: "💰 Financial Literacy", sub: "Money management · investment · budgeting" },
+                    page4: { title: "🧭 Entrepreneurship Mentorship", sub: "Innovation · sustainability · upscaling" },
+                    page5: { title: "📱 Digital Innovation", sub: "Digital business solutions · financial tools" },
+                    page6: { title: "🧑‍🎓 Youth Empowerment", sub: "Skills, internships, and financial independence" },
+                    page7: { title: "🚀 Startup Boost", sub: "Ideation · funding · go-to-market" },
+                    page8: { title: "🌍 Impact & Sustainability", sub: "Social enterprise · ESG · community" },
+                    p1c1: { title: "Registration", desc: "Company & business registration, licenses, and permits." },
+                    p1c2: { title: "Advisory", desc: "Strategic advisory, risk management, and operational efficiency." },
+                    p1c3: { title: "Management Support", desc: "Team structuring, HR, and performance systems." },
+                    p1c4: { title: "Tax Compliance", desc: "Tax planning, filing, and compliance advisory." },
+                    p2c1: { title: "Corporate Training", desc: "Workshops, soft skills, and leadership programs." },
+                    p2c2: { title: "Professional Growth", desc: "Career mapping, mentorship, and upskilling paths." },
+                    p2c3: { title: "Certifications", desc: "Industry-recognized certifications and badges." },
+                    p3c1: { title: "Money Management", desc: "Personal & business cash flow, saving strategies." },
+                    p3c2: { title: "Investment Planning", desc: "Portfolio, retirement, and wealth building." },
+                    p3c3: { title: "Budgeting", desc: "Zero-based, forecasting, and variance analysis." },
+                    p3c4: { title: "Advisory", desc: "One-on-one financial advisory for entrepreneurs." },
+                    p4c1: { title: "Innovation Guide", desc: "Design thinking, lean startup, and ideation." },
+                    p4c2: { title: "Sustainability", desc: "ESG, circular economy, and long-term resilience." },
+                    p4c3: { title: "Upscaling Tips", desc: "Scaling operations, market expansion, and funding." },
+                    p5c1: { title: "Digital Solutions", desc: "E-commerce, automation, and digital strategy." },
+                    p5c2: { title: "Financial Tracking", desc: "Dashboards, real-time analytics, and reporting." },
+                    p5c3: { title: "Resource Management", desc: "Inventory, CRM, and workflow optimization." },
+                    p6c1: { title: "Youth Skills", desc: "Digital literacy, public speaking, and teamwork." },
+                    p6c2: { title: "Internships", desc: "Placement, mentorship, and real-world exposure." },
+                    p6c3: { title: "Financial Independence", desc: "Earning, saving, and investing for young adults." },
+                    p7c1: { title: "Go-to-Market", desc: "Launch strategy, customer acquisition, and branding." },
+                    p7c2: { title: "Funding Support", desc: "Pitch deck, investor relations, and grants." },
+                    p7c3: { title: "Team Building", desc: "Hiring, culture, and co-founder alignment." },
+                    p8c1: { title: "Social Enterprise", desc: "Purpose-driven business models and impact measurement." },
+                    p8c2: { title: "Circular Economy", desc: "Waste reduction, upcycling, and green supply chains." },
+                    p8c3: { title: "Community Engagement", desc: "Local partnerships, volunteering, and outreach." },
+                    footer: { text: "Smarti-Cent · empowering youth & small entrepreneurs with real world money skills",
+                        theme: "light / dark" }
+                },
+                sw: {
+                    nav: { consult: "Ushauri", career: "Maendeleo", finlit: "Elimu Fedha", mentor: "Mentor",
+                        digital: "Dijitali", youth: "Vijana", startup: "Anzisha", impact: "Athari" },
+                    page1: { title: "📋 Ushauri wa Biashara", sub: "Usajili · ushauri · usaidizi wa ushuru na usimamizi" },
+                    page2: { title: "🚀 Maendeleo ya Kazi", sub: "Mafunzo ya shirika na mwongozo wa ukuaji" },
+                    page3: { title: "💰 Elimu ya Fedha", sub: "Usimamizi wa pesa · uwekezaji · bajeti" },
+                    page4: { title: "🧭 Ushauri wa Ujasiriamali", sub: "Ubunifu · uendelevu · upanuzi" },
+                    page5: { title: "📱 Ubunifu wa Dijitali", sub: "Suluhisho za biashara dijitali · zana za kifedha" },
+                    page6: { title: "🧑‍🎓 Uwezeshaji Vijana", sub: "Ujuzi, mafunzo kazini, na uhuru wa kifedha" },
+                    page7: { title: "🚀 Kuanzisha Biashara", sub: "Mawazo · ufadhili · kuingia sokoni" },
+                    page8: { title: "🌍 Athari na Uendelevu", sub: "Biashara ya kijamii · ESG · jamii" },
+                    p1c1: { title: "Usajili", desc: "Usajili wa kampuni, leseni, na vibali." },
+                    p1c2: { title: "Ushauri", desc: "Ushauri wa kimkakati, usimamizi wa hatari, na ufanisi." },
+                    p1c3: { title: "Usaidizi wa Usimamizi", desc: "Muundo wa timu, HR, na mifumo ya utendaji." },
+                    p1c4: { title: "Uzingatiaji wa Ushuru", desc: "Mipango ya ushuru, uwasilishaji, na ushauri." },
+                    p2c1: { title: "Mafunzo ya Shirika", desc: "Semina, ujuzi laini, na programu za uongozi." },
+                    p2c2: { title: "Ukuaji wa Kitaalamu", desc: "Ramani ya kazi, ushauri, na njia za ujuzi." },
+                    p2c3: { title: "Vyeti", desc: "Vyeti na beji zinazotambulika tasnia." },
+                    p3c1: { title: "Usimamizi wa Fedha", desc: "Mtiririko wa pesa binafsi na biashara, mikakati ya kuweka akiba." },
+                    p3c2: { title: "Mipango ya Uwekezaji", desc: "Kwingineko, kustaafu, na kujenga utajiri." },
+                    p3c3: { title: "Bajeti", desc: "Msingi wa sifuri, utabiri, na uchambuzi wa tofauti." },
+                    p3c4: { title: "Ushauri", desc: "Ushauri wa fedha ana kwa ana kwa wajasiriamali." },
+                    p4c1: { title: "Mwongozo wa Ubunifu", desc: "Fikra za kubuni, kuanzisha biashara, na ubunifu." },
+                    p4c2: { title: "Uendelevu", desc: "ESG, uchumi wa mzunguko, na uthabiti wa muda mrefu." },
+                    p4c3: { title: "Vidokezo vya Upanuzi", desc: "Kuongeza shughuli, upanuzi wa soko, na ufadhili." },
+                    p5c1: { title: "Suluhisho za Dijitali", desc: "Biashara ya mtandaoni, otomatiki, na mkakati wa dijitali." },
+                    p5c2: { title: "Ufuatiliaji wa Fedha", desc: "Dashibodi, uchanganuzi wa wakati halisi, na ripoti." },
+                    p5c3: { title: "Usimamizi wa Rasilimali", desc: "Orodha, CRM, na uboreshaji wa mtiririko wa kazi." },
+                    p6c1: { title: "Ujuzi wa Vijana", desc: "Elimu ya dijitali, kuzungumza, na kazi ya pamoja." },
+                    p6c2: { title: "Mafunzo kazini", desc: "Uwekaji, ushauri, na uzoefu halisi." },
+                    p6c3: { title: "Uhuru wa Fedha", desc: "Kupata, kuweka akiba, na kuwekeza kwa vijana." },
+                    p7c1: { title: "Kuingia Sokoni", desc: "Mkakati wa uzinduzi, upataji wateja, na chapa." },
+                    p7c2: { title: "Msaada wa Ufadhili", desc: "Mpango wa mawasilisho, mahusiano ya wawekezaji, na ruzuku." },
+                    p7c3: { title: "Kujenga Timu", desc: "Kuajiri, utamaduni, na ushirikiano wa mwanzilishi." },
+                    p8c1: { title: "Biashara ya Kijamii", desc: "Mifano ya biashara inayolenga lengo na kipimo cha athari." },
+                    p8c2: { title: "Uchumi wa Mzunguko", desc: "Kupunguza taka, kuchakata, na minyororo ya kijani." },
+                    p8c3: { title: "Ushirikishwaji wa Jamii", desc: "Ushirikiano wa ndani, kujitolea, na uhamasishaji." },
+                    footer: { text: "Smarti-Cent · kuwezesha vijana na wajasiriamali wadogo na ujuzi wa pesa",
+                        theme: "nyepesi / nyeusi" }
+                },
+                fr: {
+                    nav: { consult: "Conseil", career: "Carrière", finlit: "FinLit", mentor: "Mentor", digital: "Numérique",
+                        youth: "Jeunes", startup: "Démarrage", impact: "Impact" },
+                    page1: { title: "📋 Conseil d'entreprise", sub: "Enregistrement · conseil · soutien fiscal et gestion" },
+                    page2: { title: "🚀 Développement de carrière", sub: "Formation en entreprise et guide de croissance" },
+                    page3: { title: "💰 Éducation financière", sub: "Gestion d'argent · investissement · budget" },
+                    page4: { title: "🧭 Mentorat entrepreneurial", sub: "Innovation · durabilité · mise à l'échelle" },
+                    page5: { title: "📱 Innovation numérique", sub: "Solutions d'entreprise numériques · outils financiers" },
+                    page6: { title: "🧑‍🎓 Autonomisation des jeunes", sub: "Compétences, stages et indépendance financière" },
+                    page7: { title: "🚀 Lancement de startup", sub: "Idéation · financement · mise sur le marché" },
+                    page8: { title: "🌍 Impact et durabilité", sub: "Entreprise sociale · ESG · communauté" },
+                    p1c1: { title: "Enregistrement", desc: "Enregistrement d'entreprise, licences et permis." },
+                    p1c2: { title: "Conseil", desc: "Conseil stratégique, gestion des risques et efficacité." },
+                    p1c3: { title: "Soutien à la gestion", desc: "Structure d'équipe, RH, systèmes de performance." },
+                    p1c4: { title: "Conformité fiscale", desc: "Planification fiscale, dépôt et conseil." },
+                    p2c1: { title: "Formation en entreprise", desc: "Ateliers, compétences douces, programmes de leadership." },
+                    p2c2: { title: "Croissance professionnelle", desc: "Cartographie de carrière, mentorat, compétences." },
+                    p2c3: { title: "Certifications", desc: "Certifications et badges reconnus par l'industrie." },
+                    p3c1: { title: "Gestion d'argent", desc: "Flux de trésorerie personnel / entreprise, stratégies d'épargne." },
+                    p3c2: { title: "Planification d'investissement", desc: "Portefeuille, retraite, constitution de patrimoine." },
+                    p3c3: { title: "Budgétisation", desc: "Zéro-based, prévisions, analyse des écarts." },
+                    p3c4: { title: "Conseil", desc: "Conseil financier individuel pour entrepreneurs." },
+                    p4c1: { title: "Guide d'innovation", desc: "Design thinking, lean startup, idéation." },
+                    p4c2: { title: "Durabilité", desc: "ESG, économie circulaire, résilience à long terme." },
+                    p4c3: { title: "Astuces de mise à l'échelle", desc: "Expansion, développement du marché, financement." },
+                    p5c1: { title: "Solutions numériques", desc: "E-commerce, automatisation, stratégie numérique." },
+                    p5c2: { title: "Suivi financier", desc: "Tableaux de bord, analyses en temps réel, rapports." },
+                    p5c3: { title: "Gestion des ressources", desc: "Inventaire, CRM, optimisation des flux." },
+                    p6c1: { title: "Compétences des jeunes", desc: "Littératie numérique, prise de parole, travail d'équipe." },
+                    p6c2: { title: "Stages", desc: "Placement, mentorat, expérience réelle." },
+                    p6c3: { title: "Indépendance financière", desc: "Gagner, épargner, investir pour les jeunes." },
+                    p7c1: { title: "Mise sur le marché", desc: "Stratégie de lancement, acquisition de clients, marque." },
+                    p7c2: { title: "Soutien au financement", desc: "Pitch deck, relations investisseurs, subventions." },
+                    p7c3: { title: "Création d'équipe", desc: "Embauche, culture, alignement des co-fondateurs." },
+                    p8c1: { title: "Entreprise sociale", desc: "Modèles d'entreprise axés sur un objectif, mesure d'impact." },
+                    p8c2: { title: "Économie circulaire", desc: "Réduction des déchets, recyclage, chaînes vertes." },
+                    p8c3: { title: "Engagement communautaire", desc: "Partenariats locaux, bénévolat, sensibilisation." },
+                    footer: { text: "Smarti-Cent · autonomiser les jeunes et les petits entrepreneurs avec des compétences financières",
+                        theme: "clair / sombre" }
+                }
+            };
+
+            // ----- DOM refs -----
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const themeLabel = document.getElementById('themeLabel');
+            const langBtns = document.querySelectorAll('.lang-btn');
+            const pageBtns = document.querySelectorAll('.page-btn');
+            const pages = document.querySelectorAll('.page');
+            const root = document.documentElement;
+
+            // ----- THEME -----
+            let currentTheme = 'light';
+            function setTheme(theme) {
+                currentTheme = theme;
+                if (theme === 'dark') {
+                    root.setAttribute('data-theme', 'dark');
+                    themeIcon.className = 'fas fa-sun';
+                    themeLabel.textContent = 'Light';
+                } else {
+                    root.removeAttribute('data-theme');
+                    themeIcon.className = 'fas fa-moon';
+                    themeLabel.textContent = 'Dark';
+                }
+                localStorage.setItem('smarti-theme', theme);
+            }
+            themeToggle.addEventListener('click', () => setTheme(currentTheme === 'light' ? 'dark' : 'light'));
+            setTheme(localStorage.getItem('smarti-theme') || 'light');
+
+            // ----- I18N RENDER -----
+            let currentLang = 'en';
+
+            function applyI18n(lang) {
+                currentLang = lang;
+                const dict = i18n[lang];
+                if (!dict) return;
+                // update all elements with data-i18n attribute
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    const value = key.split('.').reduce((o, k) => (o && o[k] !== undefined) ? o[k] : null, dict);
+                    if (value !== null && value !== undefined) {
+                        el.textContent = value;
+                    }
+                });
+                // update active language button
+                langBtns.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+                localStorage.setItem('smarti-lang', lang);
+            }
+
+            // language switch
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.dataset.lang;
+                    applyI18n(lang);
+                });
+            });
+
+            // load saved language
+            const savedLang = localStorage.getItem('smarti-lang') || 'en';
+            applyI18n(savedLang);
+
+            // ----- PAGE NAVIGATION (8 pages) - CLICK DISPLAY CONTENT -----
+            function showPage(pageId) {
+                // hide all pages
+                pages.forEach(p => p.classList.remove('active-page'));
+                // show target
+                const target = document.getElementById(pageId);
+                if (target) target.classList.add('active-page');
+                // update active button
+                pageBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.page === pageId) btn.classList.add('active');
+                });
+                localStorage.setItem('smarti-page', pageId);
+            }
+
+            // attach click event to each page button
+            pageBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const pageId = this.dataset.page;
+                    showPage(pageId);
+                });
+            });
+
+            // restore saved page or default to page1
+            const savedPage = localStorage.getItem('smarti-page') || 'page1';
+            showPage(savedPage);
+
+            // footer year
+            document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+            console.log('Smarti-Cent · 8 pages · click any page to display its content');
+        })();
+    </script>
+</body>
+</html>
