@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: mediqueue-backend
+
+firebase:
+  config-path: ${FIREBASE_CONFIG_PATH:}
+  database-url: ${FIREBASE_DATABASE_URL:https://mediqueue-default-rtdb.firebaseio.com}
