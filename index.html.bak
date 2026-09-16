@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
-    <title>SMARTI CENTS | Empowering Your Financial Future</title>
+    <title>Smarti Cent$ | Empowering Your Financial Future</title>
     <meta name="description"
-        content="SMARTI CENTS empowers your financial future through Financial Literacy, Business Consultancy, Career Development, Mentorship, and Digital Innovation. Headquartered in Arusha, operating across all Tanzanian regions." />
+        content="Smarti Cent$ empowers your financial future through Financial Literacy, Business Consultancy, Career Development, Mentorship, and Digital Innovation. Headquartered in Arusha, operating across all Tanzanian regions." />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -222,35 +222,29 @@
         .brand-icon {
             width: 48px;
             height: 48px;
+            border-radius: 50%;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: transparent;
-            border: none;
-            box-shadow: none;
+            background: white;
+            border: 2px solid var(--brand-green);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             position: relative;
             flex-shrink: 0;
             transition: var(--transition-smooth);
-            padding: 0;
-        }
-
-        [data-theme="dark"] .brand-icon {
-            background: transparent;
-            border: none;
-            box-shadow: none;
         }
 
         .brand-logo:hover .brand-icon {
-            transform: translateY(-2px) scale(1.06);
-            border: none;
-            box-shadow: none;
+            transform: rotate(5deg) scale(1.05);
+            border-color: var(--brand-gold);
+            box-shadow: 0 6px 16px var(--brand-green-glow);
         }
 
         .brand-icon img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            display: block;
+            object-fit: cover;
         }
 
         .brand-name-group {
@@ -853,29 +847,19 @@
         }
 
         .hero-card-logo {
-            width: 58px;
-            height: 58px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            border: none;
-            box-shadow: none;
-            flex-shrink: 0;
-            padding: 0;
-        }
-
-        [data-theme="dark"] .hero-card-logo {
-            background: transparent;
-            border: none;
-            box-shadow: none;
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--brand-green);
+            box-shadow: 0 6px 18px rgba(30, 123, 76, 0.3);
+            background: white;
         }
 
         .hero-card-logo img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            display: block;
+            object-fit: cover;
         }
 
         .card-value-list {
@@ -2341,43 +2325,20 @@
             .nav-actions .btn-cta-nav {
                 display: none;
             }
-
-            .navbar .container {
-                padding: 0 16px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .navbar .container {
-                padding: 0 14px;
-                gap: 8px;
-            }
-
-            .nav-actions {
-                gap: 8px;
-            }
-
-            .nav-actions .lang-picker {
-                display: none; /* Neatly accessible directly inside the mobile drawer quick controls */
-            }
-
-            .brand-logo {
-                gap: 8px;
-            }
-
-            .brand-title {
-                font-size: 1.22rem;
-            }
-
-            .brand-icon {
-                width: 44px;
-                height: 38px;
-            }
         }
 
         @media (max-width: 480px) {
             .brand-subtitle {
                 display: none;
+            }
+
+            .brand-title {
+                font-size: 1.35rem;
+            }
+
+            .brand-icon {
+                width: 42px;
+                height: 42px;
             }
 
             .hero-title {
@@ -2389,177 +2350,6 @@
                 width: 100%;
             }
         }
-    
-        /* Leadership Team Grid Styles */
-        .team-grid-6col {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 32px;
-        }
-        @media (max-width: 992px) {
-            .team-grid-6col {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 600px) {
-            .team-grid-6col {
-                grid-template-columns: 1fr;
-            }
-        }
-        .team-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition-smooth);
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
-        .team-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--brand-green);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-        }
-        .team-card-img-wrap {
-            width: 100%;
-            height: 230px;
-            background: #0b1e3f;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-        }
-        .team-card-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top center;
-            transition: transform 0.4s ease;
-        }
-        .team-card:hover .team-card-img-wrap img {
-            transform: scale(1.05);
-        }
-        .team-card-body {
-            padding: 20px 16px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .team-card-name {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            margin-bottom: 6px;
-        }
-        .team-card-role {
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: var(--brand-green);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Traction Section Styles */
-        .traction-stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 36px;
-        }
-        @media (max-width: 768px) {
-            .traction-stats-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .traction-stat-box {
-            background: linear-gradient(135deg, rgba(19, 136, 78, 0.08) 0%, rgba(203, 139, 58, 0.08) 100%);
-            border: 1px solid var(--border-subtle);
-            border-radius: 18px;
-            padding: 28px 20px;
-            text-align: center;
-            transition: var(--transition-smooth);
-        }
-        .traction-stat-box:hover {
-            transform: translateY(-4px);
-            border-color: var(--brand-green);
-        }
-        .traction-number {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--brand-green);
-            line-height: 1.1;
-            margin-bottom: 8px;
-        }
-        .traction-label {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 6px;
-        }
-        .traction-sub {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-        .traction-gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 24px;
-        }
-        @media (max-width: 768px) {
-            .traction-gallery {
-                grid-template-columns: 1fr;
-            }
-        }
-        .traction-photo-card {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-subtle);
-            background: var(--bg-card);
-        }
-        .traction-photo-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-        .traction-photo-caption {
-            padding: 12px 16px;
-            font-weight: 700;
-            font-size: 0.92rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .traction-callout-box {
-            margin-top: 30px;
-            padding: 24px;
-            background: linear-gradient(135deg, #0b1e3f 0%, #13884e 100%);
-            border-radius: 18px;
-            color: white;
-            text-align: center;
-        }
-        .traction-callout-box p {
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .traction-callout-box h4 {
-            font-size: 1.45rem;
-            font-weight: 900;
-            color: var(--brand-gold);
-            font-style: italic;
-        }
-
     </style>
 </head>
 
@@ -2571,12 +2361,12 @@
     <header class="navbar" id="siteNavbar">
         <div class="container">
             <!-- Brand Logo -->
-            <a href="#hero" class="brand-logo" aria-label="SMARTI CENTS Home">
+            <a href="#hero" class="brand-logo" aria-label="Smarti Cent Home">
                 <div class="brand-icon">
-                    <img src="assets/logo-emblem.png" alt="SMARTI CENTS Emblem" />
+                    <img src="image.png" alt="Smarti Cents Logo" />
                 </div>
                 <div class="brand-name-group">
-                    <div class="brand-title">SMARTI <span>CENTS</span></div>
+                    <div class="brand-title">Smarti <span>Cents</span></div>
                     <div class="brand-subtitle" data-i18n="brand.tagline">Empowering your financial future</div>
                 </div>
             </a>
@@ -2741,10 +2531,10 @@
         <div class="drawer-header">
             <div class="brand-logo">
                 <div class="brand-icon">
-                    <img src="assets/logo-emblem.png" alt="SMARTI CENTS Logo" />
+                    <img src="image.png" alt="Smarti Cent$ Logo" />
                 </div>
                 <div class="brand-name-group">
-                    <div class="brand-title">SMARTI <span>CENTS</span></div>
+                    <div class="brand-title">Smarti <span>Cent$</span></div>
                     <div class="brand-subtitle" data-i18n="brand.tagline">Empowering your financial future</div>
                 </div>
             </div>
@@ -2911,13 +2701,17 @@
                         <div class="hero-badge-container">
                             <span class="hero-badge"><i class="fas fa-shield-alt"></i> <span data-i18n="hero.badge1">We
                                     Help You Grow With Confidence</span></span>
-                            <span class="hero-badge gold"><i class="fas fa-map-marker-alt"></i> <span data-i18n="hero.badge2">Arusha HQ • Nationwide Reach</span></span>
+                            <span class="hero-badge gold"><i class="fas fa-map-marker-alt"></i> <span
+                                    data-i18n="hero.badge2">Arusha HQ · Nationwide Reach</span></span>
                         </div>
                         <h1 class="hero-title">
                             <span data-i18n="hero.title1">Empowering Your</span> <br>
                             <span class="highlight" data-i18n="hero.title2">Financial Future.</span>
                         </h1>
-                        <p class="hero-subtitle" data-i18n="hero.sub">SMARTI CENTS is a financial literacy and business consultancy organization dedicated to empowering youth, students, entrepreneurs, and small businesses through practical financial education, entrepreneurship development, and digital business solutions.</p>
+                        <p class="hero-subtitle" data-i18n="hero.sub">
+                            Smart advice. Better decisions. Strong finances. Sustainable future. Your goals, our
+                            commitment. Equipping youth, entrepreneurs, and businesses across Tanzania.
+                        </p>
                         <div class="hero-cta-group">
                             <a href="#what-we-do" class="btn-primary">
                                 <i class="fas fa-compass"></i> <span data-i18n="hero.btnServices">Explore
@@ -2931,16 +2725,16 @@
                         <!-- Hero Stats -->
                         <div class="hero-stats-strip">
                             <div class="stat-item">
+                                <h4>31+</h4>
+                                <p data-i18n="hero.statRegions">Tanzanian Regions</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>10k+</h4>
+                                <p data-i18n="hero.statYouth">Empowered Individuals</p>
+                            </div>
+                            <div class="stat-item">
                                 <h4>500+</h4>
-                                <p data-i18n="hero.statYouth">Youth Reached</p>
-                            </div>
-                            <div class="stat-item">
-                                <h4>48</h4>
-                                <p data-i18n="hero.statEmpowered">SMEs Empowered</p>
-                            </div>
-                            <div class="stat-item">
-                                <h4>50+</h4>
-                                <p data-i18n="hero.statBiz">SMEs Consulted</p>
+                                <p data-i18n="hero.statBiz">Businesses Consulted</p>
                             </div>
                         </div>
                     </div>
@@ -2950,16 +2744,16 @@
                         <div class="hero-card">
                             <div class="hero-card-brand">
                                 <div class="hero-card-logo">
-                                    <img src="assets/logo-emblem.png" alt="SMARTI CENTS Emblem" />
+                                    <img src="image.png" alt="Smarti Cent$ Emblem" />
                                 </div>
                                 <div>
-                                    <h3 style="font-size: 1.4rem; font-weight: 800;">SMARTI CENTS</h3>
+                                    <h3 style="font-size: 1.4rem; font-weight: 800;">Smarti Cent$</h3>
                                     <p style="font-size: 0.85rem; color: var(--brand-green); font-weight: 700;"
                                         data-i18n="hero.pillarTitle">Growth & Literacy Hub</p>
                                 </div>
                             </div>
                             <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 8px;"
-                                data-i18n="hero.cardHeadline">Why SMARTI CENTS?</h4>
+                                data-i18n="hero.cardHeadline">Why Smarti Cent$?</h4>
                             <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="hero.cardSub">We
                                 transform complex financial, regulatory, and technical landscapes into actionable paths
                                 for lasting wealth.</p>
@@ -2968,27 +2762,28 @@
                                 <div class="card-value-item">
                                     <i class="fas fa-check-circle"></i>
                                     <div>
-                                        <h5 data-i18n="hero.v1Title">Practical Financial Education</h5>
-                                        <p data-i18n="hero.v1Desc">Budgeting, financial planning, SME management, and financial awareness programs.</p>
+                                        <h5 data-i18n="hero.v1Title">Smart Advice & Guidance</h5>
+                                        <p data-i18n="hero.v1Desc">Practical, tailored solutions for personal and
+                                            enterprise cash flow.</p>
                                     </div>
                                 </div>
                                 <div class="card-value-item">
-                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-chart-pie"></i>
                                     <div>
-                                        <h5 data-i18n="hero.v2Title">Enterprise Growth & Mentorship</h5>
-                                        <p data-i18n="hero.v2Desc">Transforming vocational and technical skills into profitable, sustainable enterprises.</p>
+                                        <h5 data-i18n="hero.v2Title">Strong Finances & Compliance</h5>
+                                        <p data-i18n="hero.v2Desc">From registration (BRELA) to tax compliance (TRA) and
+                                            forecasting.</p>
                                     </div>
                                 </div>
                                 <div class="card-value-item">
-                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-handshake"></i>
                                     <div>
-                                        <h5 data-i18n="hero.v3Title">Smart Digital Solutions</h5>
-                                        <p data-i18n="hero.v3Desc">Budgeting applications, workflow automation, and tools driving economic growth.</p>
+                                        <h5 data-i18n="hero.v3Title">Your Goals, Our Commitment</h5>
+                                        <p data-i18n="hero.v3Desc">Mentorship that sustains upscaling and long-term
+                                            resilience.</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
                         </div>
                     </div>
                 </div>
@@ -3005,7 +2800,7 @@
                             1</span></span>
                     <h2 class="section-title" data-i18n="sec1.title">Who We Are</h2>
                     <p class="section-desc" data-i18n="sec1.desc">
-                        Get to know SMARTI CENTS: our institutional profile, driving purpose, guiding values, and our
+                        Get to know Smarti Cent$ — our institutional profile, driving purpose, guiding values, and our
                         journey from Arusha across the United Republic of Tanzania.
                     </p>
                 </div>
@@ -3016,13 +2811,15 @@
                         <div class="card-icon-bubble"><i class="fas fa-university"></i></div>
                         <h3 class="card-title" data-i18n="sec1.profTitle">Name & Organization Profile</h3>
                         <p class="card-text" data-i18n="sec1.profText1">
-                            <strong>SMARTI CENTS</strong> is a financial literacy and business consultancy organization dedicated to empowering youth, students, entrepreneurs, and small businesses through practical financial education, entrepreneurship development, and digital business solutions.
+                            <strong>Smarti Cent$</strong> is a premier Tanzanian consulting and capacity-building
+                            initiative established to empower individuals, youth, startups, and established enterprises
+                            with actionable financial literacy, regulatory acumen, business advisory, and digital
+                            transformation tools.
                         </p>
                         <p class="card-text" style="margin-top: 14px;" data-i18n="sec1.profText2">
-                            Our expertise focuses on budgeting, financial planning, SME management, business consultancy, entrepreneurship training, startup mentorship, and financial awareness programs. We help individuals and businesses transform technical and vocational skills into profitable and sustainable enterprises through modern financial knowledge and innovative business support systems.
-                        </p>
-                        <p class="card-text" style="margin-top: 14px;" data-i18n="sec1.profText3">
-                            SMARTI CENTS also promotes innovation and digital transformation by supporting the development of smart financial tools, budgeting applications, and business management solutions aimed at improving financial discipline, productivity, and economic growth among communities and emerging entrepreneurs.
+                            Operating with the philosophy <em>"Empowering your financial future"</em>, Smarti Cent$
+                            bridges the gap between grassroots entrepreneurs and modern financial systems through
+                            practical education, hands-on mentorship, and strategic partnerships.
                         </p>
                     </div>
 
@@ -3034,10 +2831,12 @@
                                     style="width:40px; height:40px; border-radius:12px; background:rgba(30,123,76,0.15); color:var(--brand-green); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
                                     <i class="fas fa-eye"></i>
                                 </div>
-                                <h4 style="font-size: 1.35rem; font-weight: 800;" data-i18n="sec1.visTitle">Our Vision</h4>
+                                <h4 style="font-size: 1.35rem; font-weight: 800;" data-i18n="sec1.visTitle">Our Vision
+                                </h4>
                             </div>
                             <p class="card-text" data-i18n="sec1.visText">
-                                To build a financially literate and economically empowered society across Tanzania.
+                                To be Tanzania and East Africa’s foremost catalyst for financial independence,
+                                innovative entrepreneurship, and sustainable wealth creation for all generations.
                             </p>
                         </div>
 
@@ -3047,10 +2846,13 @@
                                     style="width:40px; height:40px; border-radius:12px; background:rgba(203,139,58,0.15); color:var(--brand-gold); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
                                     <i class="fas fa-bullseye"></i>
                                 </div>
-                                <h4 style="font-size: 1.35rem; font-weight: 800;" data-i18n="sec1.misTitle">Our Mission</h4>
+                                <h4 style="font-size: 1.35rem; font-weight: 800;" data-i18n="sec1.misTitle">Our Mission
+                                </h4>
                             </div>
                             <p class="card-text" data-i18n="sec1.misText">
-                                To deliver inclusive and practical financial accessibility and capacity building solutions that enable individuals and enterprises to make informed decisions, strengthen financial sustainability, and create long term economic value.
+                                To equip Tanzanians with practical money skills, business compliance expertise, career
+                                guidance, and digital innovation so they make smart decisions, build strong finances,
+                                and achieve sustainable futures.
                             </p>
                         </div>
                     </div>
@@ -3058,47 +2860,38 @@
 
                 <!-- d) Our Values -->
                 <div id="our-values" style="margin-bottom: 50px;">
-                    <h3 style="font-size: 1.6rem; font-weight: 800; text-align: center; margin-bottom: 12px;" data-i18n="sec1.valHeading">
+                    <h3 style="font-size: 1.6rem; font-weight: 800; text-align: center; margin-bottom: 24px;"
+                        data-i18n="sec1.valHeading">
                         Our Core Values
                     </h3>
-                    <p style="text-align: center; max-width: 680px; margin: 0 auto 32px; color: var(--text-muted); font-size: 0.95rem;" data-i18n="sec1.valSub">
-                        Principles that guide our work, our discipline, and our commitment to sustainable wealth creation.
-                    </p>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
-                        <div class="value-card">
-                            <i class="fas fa-brain"></i>
-                            <h4 data-i18n="val.v1">Financial Intelligence Over Hype</h4>
-                            <p data-i18n="val.v1Desc">Money is a system, not a lottery. We promote structured thinking, informed decision making, and disciplined capital allocation without shortcuts or speculation.</p>
-                        </div>
+                    <div class="grid-5col">
                         <div class="value-card">
                             <i class="fas fa-balance-scale"></i>
-                            <h4 data-i18n="val.v2">Radical Responsibility</h4>
-                            <p data-i18n="val.v2Desc">Income, debt, savings, and investment decisions begin with personal accountability. We reject blame narratives and communicate facts, not fantasies. Trust is our currency.</p>
+                            <h4 data-i18n="val.v1">Integrity</h4>
+                            <p data-i18n="val.v1Desc">Transparent, honest financial and regulatory guidance at all
+                                times.</p>
                         </div>
                         <div class="value-card">
-                            <i class="fas fa-tools"></i>
-                            <h4 data-i18n="val.v3">Practical Education</h4>
-                            <p data-i18n="val.v3Desc">Theory without application is noise. We focus on actionable frameworks, real world examples, and tools that translate directly into positive behavior change.</p>
+                            <i class="fas fa-medal"></i>
+                            <h4 data-i18n="val.v2">Excellence</h4>
+                            <p data-i18n="val.v2Desc">High standard of corporate training, advisory, and execution.</p>
                         </div>
                         <div class="value-card">
-                            <i class="fas fa-chart-line"></i>
-                            <h4 data-i18n="val.v4">Long Term Orientation</h4>
-                            <p data-i18n="val.v4Desc">We think in decades, not paydays. Wealth is built through consistency, compounding, and strategic patience to optimize for sustainable growth.</p>
+                            <i class="fas fa-user-astronaut"></i>
+                            <h4 data-i18n="val.v3">Empowerment</h4>
+                            <p data-i18n="val.v3Desc">Giving youth and entrepreneurs tools to take control of their
+                                economic destiny.</p>
                         </div>
                         <div class="value-card">
-                            <i class="fas fa-calendar-check"></i>
-                            <h4 data-i18n="val.v5">Discipline & Consistency</h4>
-                            <p data-i18n="val.v5Desc">Financial growth is a daily practice. Budgeting, tracking, reinvesting, and learning repeated consistently. We celebrate process over hype.</p>
+                            <i class="fas fa-brain"></i>
+                            <h4 data-i18n="val.v4">Innovation</h4>
+                            <p data-i18n="val.v4Desc">Modern digital tools and lean methodologies for agile growth.</p>
                         </div>
                         <div class="value-card">
-                            <i class="fas fa-lightbulb"></i>
-                            <h4 data-i18n="val.v6">Empowerment Through Knowledge</h4>
-                            <p data-i18n="val.v6Desc">Financial literacy is leverage. Understanding money enables individuals to negotiate better, invest smarter, build stronger businesses, and reduce vulnerability.</p>
-                        </div>
-                        <div class="value-card">
-                            <i class="fas fa-users"></i>
-                            <h4 data-i18n="val.v7">Community Growth</h4>
-                            <p data-i18n="val.v7Desc">We rise by elevating others. SMARTI CENTS fosters a culture of shared learning, collaboration, and accountability among ambitious individuals committed to advancement.</p>
+                            <i class="fas fa-seedling"></i>
+                            <h4 data-i18n="val.v5">Sustainability</h4>
+                            <p data-i18n="val.v5Desc">Building long-term wealth systems and resilient business models.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -3167,7 +2960,7 @@
                             2</span></span>
                     <h2 class="section-title" data-i18n="sec2.title">What We Do</h2>
                     <p class="section-desc" data-i18n="sec2.desc">
-                        Our 6 core pillars from the official SMARTI CENTS catalog, crafted to deliver comprehensive
+                        Our 6 core pillars from the official Smarti Cent$ catalog — crafted to deliver end-to-end
                         support for individuals and businesses at every stage.
                     </p>
                 </div>
@@ -3209,7 +3002,7 @@
                         </div>
                         <h3 class="service-title" data-i18n="srv.bizTitle">Business Consultancy</h3>
                         <p class="service-desc" data-i18n="srv.bizDesc">
-                            Full cycle corporate setup, regulatory compliance, and operational optimization to secure
+                            Full-cycle corporate setup, regulatory compliance, and operational optimization to secure
                             and scale your enterprise.
                         </p>
                         <ul class="service-bullets">
@@ -3237,7 +3030,7 @@
                         </div>
                         <h3 class="service-title" data-i18n="srv.carTitle">Career Development</h3>
                         <p class="service-desc" data-i18n="srv.carDesc">
-                            Empowering professionals and teams with in demand skills, leadership frameworks, and
+                            Empowering professionals and teams with in-demand skills, leadership frameworks, and
                             actionable career pathways.
                         </p>
                         <ul class="service-bullets">
@@ -3297,7 +3090,7 @@
                             through challenges.
                         </p>
                         <ul class="service-bullets">
-                            <li><i class="fas fa-check"></i> <span data-i18n="srv.menB1">one on one founder & executive
+                            <li><i class="fas fa-check"></i> <span data-i18n="srv.menB1">One-on-one founder & executive
                                     coaching</span></li>
                             <li><i class="fas fa-check"></i> <span data-i18n="srv.menB2">Peer mastermind circles &
                                     experience sharing</span></li>
@@ -3307,7 +3100,7 @@
                                     objective setting</span></li>
                         </ul>
                         <div class="service-tags-row">
-                            <span>one on one</span>
+                            <span>1-on-1</span>
                             <span>Coaching</span>
                             <span>Mastermind</span>
                         </div>
@@ -3321,7 +3114,7 @@
                         </div>
                         <h3 class="service-title" data-i18n="srv.digTitle">Digital Innovation</h3>
                         <p class="service-desc" data-i18n="srv.digDesc">
-                            Harnessing tech tools to automate workflows, track bookkeeping in real time, and digitally
+                            Harnessing tech tools to automate workflows, track bookkeeping in real-time, and digitally
                             scale across markets.
                         </p>
                         <ul class="service-bullets">
@@ -3370,69 +3163,6 @@
             </div>
         </section>
 
-        
-        <!-- ==========================================================================
-             SECTION: TRACTION & PROVEN IMPACT
-             ========================================================================== -->
-        <section class="section-wrapper" id="our-traction" style="background: var(--bg-surface);">
-            <div class="container">
-                <div class="section-header">
-                    <span class="badge-pill"><i class="fas fa-chart-bar"></i> <span data-i18n="trac.badge">Proven Impact</span></span>
-                    <h2 class="section-title" data-i18n="trac.title">Our Traction</h2>
-                    <p class="section-desc" data-i18n="trac.desc">
-                        Our work is not theoretical. It is practical, measurable, and community centered.
-                    </p>
-                </div>
-
-                <div class="traction-stats-grid">
-                    <div class="traction-stat-box">
-                        <div class="traction-number">500+</div>
-                        <div class="traction-label" data-i18n="trac.s1Title">Youth Reached Directly</div>
-                        <div class="traction-sub" data-i18n="trac.s1Desc">
-                            Reached across universities and community platforms through structured financial literacy sessions, entrepreneurship workshops, and practical business education forums.
-                        </div>
-                    </div>
-                    <div class="traction-stat-box">
-                        <div class="traction-number">48</div>
-                        <div class="traction-label" data-i18n="trac.s2Title">SMEs Empowered</div>
-                        <div class="traction-sub" data-i18n="trac.s2Desc">
-                            Empowered within our surrounding community through tailored advisory sessions, business structuring guidance, and operational support.
-                        </div>
-                    </div>
-                    <div class="traction-stat-box">
-                        <div class="traction-number">50+</div>
-                        <div class="traction-label" data-i18n="trac.s3Title">SMEs Supported via Consultancy</div>
-                        <div class="traction-sub" data-i18n="trac.s3Desc">
-                            Successfully supported in navigating critical challenges including cash flow instability, compliance gaps, pricing strategy, and sustainable growth planning.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Real Action Gallery -->
-                <div class="traction-gallery">
-                    <div class="traction-photo-card">
-                        <img src="assets/traction-mentorship.jpg" alt="SMARTI CENTS Mentorship and Training Sessions" />
-                        <div class="traction-photo-caption">
-                            <i class="fas fa-chalkboard-teacher" style="color: var(--brand-green);"></i>
-                            <span data-i18n="trac.cap1">Mentorship and Training Workshops</span>
-                        </div>
-                    </div>
-                    <div class="traction-photo-card">
-                        <img src="assets/traction-bootcamp.jpg" alt="SMARTI CENTS Bootcamps" />
-                        <div class="traction-photo-caption">
-                            <i class="fas fa-users-class" style="color: var(--brand-gold);"></i>
-                            <span data-i18n="trac.cap2">High Impact Bootcamps for Youth & Founders</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="traction-callout-box">
-                    <p data-i18n="trac.callout">Our work is not theoretical. It is practical, measurable, and community centered.</p>
-                    <h4 data-i18n="trac.question">The question is simple: Why not you?</h4>
-                </div>
-            </div>
-        </section>
-
         <!-- ==========================================================================
              SECTION 3: WHERE WE WORK (TUNAPOFANYIA KAZI)
              ========================================================================== -->
@@ -3443,7 +3173,7 @@
                             3</span></span>
                     <h2 class="section-title" data-i18n="sec3.title">Where We Work</h2>
                     <p class="section-desc" data-i18n="sec3.desc">
-                        Headquartered in the vibrant commercial hub of Arusha, with active outreach, on site clinics,
+                        Headquartered in the vibrant commercial hub of Arusha, with active outreach, on-site clinics,
                         and digital advisory operating across all Tanzanian regions.
                     </p>
                 </div>
@@ -3460,14 +3190,14 @@
                                 <i class="fas fa-map-pin"></i>
                                 <div>
                                     <h6 data-i18n="hq.locTitle">Physical Address</h6>
-                                    <p data-i18n="hq.locDesc">@ IBUSC, IAA Arusha Njiro, Tanzania</p>
+                                    <p data-i18n="hq.locDesc">Business Startup Center, Njiro, Arusha, Tanzania</p>
                                 </div>
                             </div>
                             <div class="hq-detail-item">
                                 <i class="fas fa-clock"></i>
                                 <div>
                                     <h6 data-i18n="hq.hoursTitle">Visiting Hours</h6>
-                                    <p data-i18n="hq.hoursDesc">Monday to Friday: 08:30 AM to 05:30 PM (EAT) | Saturday:
+                                    <p data-i18n="hq.hoursDesc">Monday – Friday: 08:30 AM – 05:30 PM (EAT) | Saturday:
                                         09:00 AM – 01:00 PM</p>
                                 </div>
                             </div>
@@ -3475,7 +3205,7 @@
                                 <i class="fas fa-phone-alt"></i>
                                 <div>
                                     <h6 data-i18n="hq.contactTitle">Direct Hotline & WhatsApp</h6>
-                                    <p>+255 697 485 396</p>
+                                    <p>+255 (0) 700 000 000 / +255 (0) 688 000 000</p>
                                 </div>
                             </div>
                             <div class="hq-detail-item">
@@ -3540,7 +3270,7 @@
                             <div>
                                 <p data-i18n="reg.callout">
                                     <strong>Including Zanzibar (Unguja & Pemba):</strong> Our digital consultancy and
-                                    on demand travel workshops ensure no entrepreneur is left behind.
+                                    on-demand travel workshops ensure no entrepreneur is left behind.
                                 </p>
                             </div>
                         </div>
@@ -3589,7 +3319,7 @@
                                 <span class="ann-date"><i class="far fa-calendar-alt"></i> Oct 2026</span>
                             </div>
                             <h4 class="ann-title" data-i18n="ann.t1">Arusha Youth Financial Masterclass</h4>
-                            <p class="ann-desc" data-i18n="ann.d1">A three day intensive boot camp covering budgeting, smart
+                            <p class="ann-desc" data-i18n="ann.d1">A 3-day intensive boot camp covering budgeting, smart
                                 investments, cash flow survival for early founders, and digital record keeping.</p>
                             <div class="ann-footer">
                                 <i class="fas fa-map-marker-alt"></i> <span>Arusha Main Center</span>
@@ -3601,7 +3331,7 @@
                                 <span class="ann-date"><i class="far fa-calendar-alt"></i> Nov 2026</span>
                             </div>
                             <h4 class="ann-title" data-i18n="ann.t2">BRELA & TRA Tax Compliance Week</h4>
-                            <p class="ann-desc" data-i18n="ann.d2">Free one on one audit for small enterprises needing
+                            <p class="ann-desc" data-i18n="ann.d2">Free one-on-one audit for small enterprises needing
                                 tax regularization, annual returns filing, and license renewal support.</p>
                             <div class="ann-footer">
                                 <i class="fas fa-laptop"></i> <span>Hybrid (Physical & Zoom)</span>
@@ -3628,7 +3358,7 @@
                         <div class="testimonial-card">
                             <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
                             <p class="testimonial-text" data-i18n="tst.q1">
-                                "SMARTI CENTS completely sorted out our company registration with BRELA and handled our
+                                "Smarti Cent$ completely sorted out our company registration with BRELA and handled our
                                 TRA tax compliance within days. Their financial tracking tools allowed us to quadruple
                                 our monthly turnover with zero bookkeeping stress!"
                             </p>
@@ -3647,7 +3377,7 @@
                             <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
                             <p class="testimonial-text" data-i18n="tst.q2">
                                 "As a university graduate, the Career Development training gave me the exact financial
-                                mindset and interview skills needed to secure a corporate analyst position. SMARTI CENTS
+                                mindset and interview skills needed to secure a corporate analyst position. Smarti Cent$
                                 is changing Tanzanian youth lives!"
                             </p>
                             <div class="testimonial-author">
@@ -3682,80 +3412,38 @@
                     </div>
                 </div>
 
-                <!-- Pane 3: Management Team -->
+                <!-- Pane 3: Management Words -->
                 <div class="news-tab-pane" id="paneManagement">
-                    <div style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-                        <span class="badge-pill" style="margin-bottom: 10px;"><i class="fas fa-users-cog"></i> <span data-i18n="mgmt.teamBadge">Leadership & Governance</span></span>
-                        <h3 style="font-size: 1.85rem; font-weight: 900; margin-bottom: 12px;" data-i18n="mgmt.teamTitle">Management Team</h3>
-                        <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;" data-i18n="mgmt.teamDesc">
-                            SMARTI CENTS is powered by a focused team of six professionals bringing together expertise in finance, business advisory, research, client relations, operations, and strategy. We operate lean, collaborative, and execution driven combining analytical rigor with practical market understanding. Our team is united by one mandate: deliver measurable financial transformation for every client we serve.
-                        </p>
-                    </div>
-
-                    <div class="team-grid-6col">
-                        <!-- 1. Klein Agust -->
-                        <div class="team-card">
-                            <div class="team-card-img-wrap">
-                                <img src="assets/team-klein-portrait.jpg" alt="Klein Agust - Chief Director" />
+                    <div class="management-banner">
+                        <div class="mgmt-profile">
+                            <div class="mgmt-avatar-frame">
+                                <div class="mgmt-avatar-inner">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
                             </div>
-                            <div class="team-card-body">
-                                <div class="team-card-name">Klein Agust</div>
-                                <div class="team-card-role" data-i18n="team.klein">Chief Director</div>
+                            <h4>Managing Director & Founder</h4>
+                            <p>Smarti Cent$ Tanzania</p>
+                            <div style="display:flex; gap:8px; margin-top:10px;">
+                                <span class="badge-pill" style="margin:0;"><i class="fas fa-certificate"></i> Verified
+                                    Leadership</span>
                             </div>
                         </div>
-
-                        <!-- 2. Masuke Chona -->
-                        <div class="team-card">
-                            <div class="team-card-img-wrap">
-                                <img src="assets/team-masuke-portrait.jpg" alt="Masuke Chona - Executive Administrator" />
-                            </div>
-                            <div class="team-card-body">
-                                <div class="team-card-name">Masuke Chona</div>
-                                <div class="team-card-role" data-i18n="team.masuke">Executive Administrator</div>
-                            </div>
-                        </div>
-
-                        <!-- 3. Mohamed Haitham -->
-                        <div class="team-card">
-                            <div class="team-card-img-wrap">
-                                <img src="assets/team-haitham-portrait.jpg" alt="Mohamed Haitham - Communications & I.T Admin" />
-                            </div>
-                            <div class="team-card-body">
-                                <div class="team-card-name">Mohamed Haitham</div>
-                                <div class="team-card-role" data-i18n="team.haitham">Communications & I.T Admin</div>
-                            </div>
-                        </div>
-
-                        <!-- 4. RahealiKunda Abia -->
-                        <div class="team-card">
-                            <div class="team-card-img-wrap">
-                                <img src="assets/team-rahealikunda-portrait.jpg" alt="RahealiKunda Abia - Finance Administrator" />
-                            </div>
-                            <div class="team-card-body">
-                                <div class="team-card-name">RahealiKunda Abia</div>
-                                <div class="team-card-role" data-i18n="team.raheali">Finance Administrator</div>
-                            </div>
-                        </div>
-
-                        <!-- 5. Ally Ally -->
-                        <div class="team-card">
-                            <div class="team-card-img-wrap">
-                                <img src="assets/team-ally-portrait.jpg" alt="Ally Ally - Operations Administrator" />
-                            </div>
-                            <div class="team-card-body">
-                                <div class="team-card-name">Ally Ally</div>
-                                <div class="team-card-role" data-i18n="team.ally">Operations Administrator</div>
-                            </div>
-                        </div>
-
-                        <!-- 6. Ndazi Anthony -->
-                        <div class="team-card">
-                            <div class="team-card-img-wrap">
-                                <img src="assets/team-ndazi-portrait.jpg" alt="Ndazi Anthony - Finance Administrator" />
-                            </div>
-                            <div class="team-card-body">
-                                <div class="team-card-name">Ndazi Anthony</div>
-                                <div class="team-card-role" data-i18n="team.ndazi">Finance Administrator</div>
+                        <div class="mgmt-speech">
+                            <h3 data-i18n="mgmt.h3">"Financial Empowerment is the Foundation of Freedom"</h3>
+                            <p data-i18n="mgmt.p1">
+                                At Smarti Cent$, our purpose stems from a simple, unyielding conviction: everyone—from
+                                an aspiring youth in Arusha to a burgeoning business owner in Mbeya or Dar es
+                                Salaam—deserves transparent, practical tools to control their economic destiny.
+                            </p>
+                            <p data-i18n="mgmt.p2">
+                                Many fail not because they lack passion, but because of regulatory confusion, tax
+                                penalties, and absent cash-flow literacy. We founded Smarti Cent$ to say: <em>"Get in
+                                    touch with us today, let's fix it now."</em> Our team is dedicated to your long-term
+                                success.
+                            </p>
+                            <div class="mgmt-quote-highlight" data-i18n="mgmt.quote">
+                                "Smart advice creates better decisions. Better decisions build strong finances and a
+                                sustainable future."
                             </div>
                         </div>
                     </div>
@@ -3783,7 +3471,7 @@
                                 <span class="pub-size">PDF · 1.8 MB</span>
                             </div>
                             <h4 class="pub-title" data-i18n="pub.t2">TRA & BRELA Startup Compliance Guide</h4>
-                            <p class="pub-desc" data-i18n="pub.d2">A step by step roadmap to registering LLCs, NGOs, TIN
+                            <p class="pub-desc" data-i18n="pub.d2">A step-by-step roadmap to registering LLCs, NGOs, TIN
                                 certificates, business licenses, and tax exemption pathways in Tanzania.</p>
                             <button class="btn-download-pub"
                                 onclick="simulateDownload('TRA_BRELA_Compliance_Guide.pdf')">
@@ -3796,7 +3484,7 @@
                                 <span class="pub-size">PDF · 2.5 MB</span>
                             </div>
                             <h4 class="pub-title" data-i18n="pub.t3">Personal Financial Literacy Handbook</h4>
-                            <p class="pub-desc" data-i18n="pub.d3">Practical budgeting templates, debt elimination
+                            <p class="pub-desc" data-i18n="pub.d3">Practical budgeting templates, debt-elimination
                                 guides, and investment roadmaps tailored for young professionals and families.</p>
                             <button class="btn-download-pub"
                                 onclick="simulateDownload('Personal_Financial_Literacy_Handbook.pdf')">
@@ -3858,7 +3546,7 @@
                             <h3 class="involve-title" data-i18n="inv.partTitle">Partnership</h3>
                         </div>
                         <p class="involve-desc" data-i18n="inv.partDesc">
-                            Collaborate with SMARTI CENTS to collaboratively design impactful CSR initiatives, financial inclusion
+                            Collaborate with Smarti Cent$ to co-design impactful CSR initiatives, financial inclusion
                             programs, and institutional incubation desks.
                         </p>
                         <ul class="involve-list">
@@ -3885,7 +3573,7 @@
                     <h2 data-i18n="cta.h2">Get In Touch With Us Today, <span>LET'S FIX IT NOW.</span></h2>
                     <p data-i18n="cta.sub">
                         Whether you need urgent BRELA business registration, TRA tax advice, financial literacy
-                        workshops, or digital tracking solutions: our Arusha HQ and regional advisors are ready to
+                        workshops, or digital tracking solutions — our Arusha HQ and regional advisors are ready to
                         assist.
                     </p>
                     <div class="cta-banner-btn-row">
@@ -3912,18 +3600,18 @@
                 <!-- Col 1: About -->
                 <div class="footer-col footer-about">
                     <div class="brand-logo" style="margin-bottom: 16px;">
-                        <div class="brand-icon">
-                            <img src="assets/logo-emblem.png" alt="SMARTI CENTS" />
+                        <div class="brand-icon" style="background: white;">
+                            <img src="image.png" alt="Smarti Cent$" />
                         </div>
                         <div class="brand-name-group">
-                            <div class="brand-title" style="color: white;">SMARTI <span
-                                    style="color: var(--brand-green);">CENTS</span></div>
+                            <div class="brand-title" style="color: white;">Smarti <span
+                                    style="color: var(--brand-green);">Cent$</span></div>
                             <div class="brand-subtitle" style="color: var(--brand-gold);">Empowering your financial
                                 future</div>
                         </div>
                     </div>
                     <p data-i18n="ft.desc">
-                        SMARTI CENTS is dedicated to empowering Tanzanian youth and entrepreneurs through Financial
+                        Smarti Cent$ is dedicated to empowering Tanzanian youth and entrepreneurs through Financial
                         Literacy, Business Consultancy, Career Development, Mentorship, and Digital Innovation.
                     </p>
                     <div class="social-icons-row">
@@ -3966,7 +3654,7 @@
                     <h5 data-i18n="ft.contact">Headquarters & Contact</h5>
                     <div class="footer-contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>HQ: @ IBUSC, IAA Arusha Njiro, Tanzania.</span>
+                        <span>HQ: Business Startup Center, Njiro, Arusha, Tanzania.</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-phone-alt"></i>
@@ -3985,7 +3673,7 @@
 
             <!-- Footer Bottom Strip -->
             <div class="footer-bottom">
-                <p>&copy; <span id="copyrightYear">2026</span> SMARTI CENTS. All rights reserved. Registered in
+                <p>&copy; <span id="copyrightYear">2026</span> Smarti Cent$. All rights reserved. Registered in
                     Tanzania.</p>
                 <p>
                     <i class="fas fa-shield-alt" style="color: var(--brand-green);"></i>
@@ -4004,7 +3692,7 @@
         <div class="modal-box">
             <button class="modal-close-btn" onclick="closeModals()"><i class="fas fa-times"></i></button>
             <h3 class="modal-title" id="modalHeading">Let's Fix It Now</h3>
-            <p class="modal-subtitle" id="modalDesc">Send us your request and a SMARTI CENTS advisor will reach out
+            <p class="modal-subtitle" id="modalDesc">Send us your request and a Smarti Cent$ advisor will reach out
                 within 2 hours.</p>
             <form
                 onsubmit="handleFormSubmit(event, 'Message sent successfully! Our advisor will contact you shortly.')">
@@ -4057,7 +3745,7 @@
     <div class="modal-backdrop" id="applicationModal">
         <div class="modal-box">
             <button class="modal-close-btn" onclick="closeModals()"><i class="fas fa-times"></i></button>
-            <h3 class="modal-title" id="appModalHeading">Get Involved with SMARTI CENTS</h3>
+            <h3 class="modal-title" id="appModalHeading">Get Involved with Smarti Cent$</h3>
             <p class="modal-subtitle" id="appModalDesc">Fill in your information to start collaborating or join our
                 talent pool.</p>
             <form
@@ -4276,21 +3964,21 @@
             };
 
             window.simulateDownload = function (fileName) {
-                alert('Downloading ' + fileName + ' ... Thank you for accessing SMARTI CENTS official publications!');
+                alert('Downloading ' + fileName + ' ... Thank you for accessing Smarti Cent$ official publications!');
             };
 
             /* ----------------------------------------------------------------------
                6. COMPREHENSIVE I18N DICTIONARY (EN, SW, FR)
                ---------------------------------------------------------------------- */
             const i18n = {
-                "en": {
+                en: {
                     "brand.tagline": "Empowering your financial future",
-                    "nav.whoWeAre": "1. Who We Are",
-                    "nav.whatWeDo": "2. What We Do",
-                    "nav.whereWeWork": "3. Where We Work",
-                    "nav.newsStories": "4. News & Stories",
-                    "nav.getInvolved": "5. Get Involved",
-                    "nav.sub.profile": "Name & Organization Profile",
+                    "nav.whoWeAre": "Who We Are",
+                    "nav.whatWeDo": "What We Do",
+                    "nav.whereWeWork": "Where We Work",
+                    "nav.newsStories": "News & Stories",
+                    "nav.getInvolved": "Get Involved",
+                    "nav.sub.profile": "Name & Profile",
                     "nav.sub.vision": "Our Vision",
                     "nav.sub.mission": "Our Mission",
                     "nav.sub.values": "Our Values",
@@ -4298,69 +3986,61 @@
                     "nav.sub.finlit": "Financial Literacy",
                     "nav.sub.consult": "Business Consultancy",
                     "nav.sub.career": "Career Development",
-                    "nav.sub.entrep": "Entrepreneurship",
-                    "nav.sub.mentor": "Mentorship",
+                    "nav.sub.entrepreneurship": "Entrepreneurship",
+                    "nav.sub.mentorship": "Mentorship",
                     "nav.sub.digital": "Digital Innovation",
-                    "nav.sub.hq": "Arusha HQ Hub",
-                    "nav.sub.regions": "Tanzanian Regions",
-                    "nav.sub.matangazo": "Announcements",
+                    "nav.sub.hq": "HQ: Arusha",
+                    "nav.sub.regions": "All Tanzanian Regions",
+                    "nav.sub.matangazo": "Matangazo (Announcements)",
                     "nav.sub.testimonials": "Testimonials",
                     "nav.sub.mgmt": "Management Words",
                     "nav.sub.pubs": "Official Publications",
                     "nav.sub.workWithUs": "Work With Us",
                     "nav.sub.partnership": "Partnership",
                     "cta.fixNow": "Let's Fix It Now",
-                    "hq.short": "HQ: Business Startup Center, Njiro, Tanzania • Operating Nationwide",
+                    "hq.short": "HQ: Business Startup Center, Njiro, Tanzania · Operating Nationwide",
 
                     "hero.badge1": "We Help You Grow With Confidence",
-                    "hero.badge2": "Arusha HQ • Nationwide Reach",
+                    "hero.badge2": "Arusha HQ · Nationwide Reach",
                     "hero.title1": "Empowering Your",
                     "hero.title2": "Financial Future.",
-                    "hero.sub": "SMARTI CENTS is a financial literacy and business consultancy organization dedicated to empowering youth, students, entrepreneurs, and small businesses through practical financial education, entrepreneurship development, and digital business solutions.",
+                    "hero.sub": "Smart advice. Better decisions. Strong finances. Sustainable future. Your goals, our commitment. Equipping youth, entrepreneurs, and businesses across Tanzania.",
                     "hero.btnServices": "Explore Services",
                     "hero.btnTouch": "Get In Touch Today",
                     "hero.statRegions": "Tanzanian Regions",
-                    "hero.statYouth": "Youth Reached Directly",
-                    "hero.statBiz": "SMEs Consulted",
-                    "hero.statEmpowered": "SMEs Empowered",
+                    "hero.statYouth": "Empowered Individuals",
+                    "hero.statBiz": "Businesses Consulted",
                     "hero.pillarTitle": "Growth & Literacy Hub",
-                    "hero.cardHeadline": "Why SMARTI CENTS?",
+                    "hero.cardHeadline": "Why Smarti Cent$?",
                     "hero.cardSub": "We transform complex financial, regulatory, and technical landscapes into actionable paths for lasting wealth.",
-                    "hero.v1Title": "Practical Financial Education",
-                    "hero.v1Desc": "Budgeting, financial planning, SME management, and financial awareness programs.",
-                    "hero.v2Title": "Enterprise Growth & Mentorship",
-                    "hero.v2Desc": "Transforming vocational and technical skills into profitable, sustainable enterprises.",
-                    "hero.v3Title": "Smart Digital Solutions",
-                    "hero.v3Desc": "Budgeting applications, workflow automation, and tools driving economic growth.",
+                    "hero.v1Title": "Smart Advice & Guidance",
+                    "hero.v1Desc": "Practical, tailored solutions for personal and enterprise cash flow.",
+                    "hero.v2Title": "Strong Finances & Compliance",
+                    "hero.v2Desc": "From registration (BRELA) to tax compliance (TRA) and forecasting.",
+                    "hero.v3Title": "Your Goals, Our Commitment",
+                    "hero.v3Desc": "Mentorship that sustains upscaling and long-term resilience.",
 
                     "sec1.badge": "Section 1",
                     "sec1.title": "Who We Are",
-                    "sec1.desc": "Get to know SMARTI CENTS: our institutional profile, driving purpose, guiding values, and our journey from Arusha across the United Republic of Tanzania.",
+                    "sec1.desc": "Get to know Smarti Cent$ — our institutional profile, driving purpose, guiding values, and our journey from Arusha across the United Republic of Tanzania.",
                     "sec1.profTitle": "Name & Organization Profile",
-                    "sec1.profText1": "SMARTI CENTS is a financial literacy and business consultancy organization dedicated to empowering youth, students, entrepreneurs, and small businesses through practical financial education, entrepreneurship development, and digital business solutions.",
-                    "sec1.profText2": "Our expertise focuses on budgeting, financial planning, SME management, business consultancy, entrepreneurship training, startup mentorship, and financial awareness programs. We help individuals and businesses transform technical and vocational skills into profitable and sustainable enterprises through modern financial knowledge and innovative business support systems.",
-                    "sec1.profText3": "SMARTI CENTS also promotes innovation and digital transformation by supporting the development of smart financial tools, budgeting applications, and business management solutions aimed at improving financial discipline, productivity, and economic growth among communities and emerging entrepreneurs.",
+                    "sec1.profText1": "Smarti Cent$ is a premier Tanzanian consulting and capacity-building initiative established to empower individuals, youth, startups, and established enterprises with actionable financial literacy, regulatory acumen, business advisory, and digital transformation tools.",
+                    "sec1.profText2": "Operating with the philosophy 'Empowering your financial future', Smarti Cent$ bridges the gap between grassroots entrepreneurs and modern financial systems through practical education, hands-on mentorship, and strategic partnerships.",
                     "sec1.visTitle": "Our Vision",
-                    "sec1.visText": "To build a financially literate and economically empowered society across Tanzania.",
+                    "sec1.visText": "To be Tanzania and East Africa’s foremost catalyst for financial independence, innovative entrepreneurship, and sustainable wealth creation for all generations.",
                     "sec1.misTitle": "Our Mission",
-                    "sec1.misText": "To deliver inclusive and practical financial accessibility and capacity building solutions that enable individuals and enterprises to make informed decisions, strengthen financial sustainability, and create long term economic value.",
+                    "sec1.misText": "To equip Tanzanians with practical money skills, business compliance expertise, career guidance, and digital innovation so they make smart decisions, build strong finances, and achieve sustainable futures.",
                     "sec1.valHeading": "Our Core Values",
-                    "sec1.valSub": "Principles that compound: guided by discipline, facts, and long term value creation.",
-                    "val.v1": "Financial Intelligence Over Hype",
-                    "val.v1Desc": "Money is a system, not a lottery. We promote structured thinking, informed decision making, and disciplined capital allocation without shortcuts or speculation.",
-                    "val.v2": "Radical Responsibility",
-                    "val.v2Desc": "Income, debt, savings, and investments begin with personal accountability. We communicate facts, not fantasies. Trust is our currency.",
-                    "val.v3": "Practical Education",
-                    "val.v3Desc": "Theory without application is noise. We focus on actionable frameworks, real world examples, and tools that translate directly into positive behavior change.",
-                    "val.v4": "Long Term Orientation",
-                    "val.v4Desc": "We think in decades, not paydays. Wealth is built through consistency, compounding, and strategic patience to optimize for sustainable growth.",
-                    "val.v5": "Discipline & Consistency",
-                    "val.v5Desc": "Financial growth is a daily practice. Budgeting, tracking, reinvesting, and learning repeated consistently. We celebrate process over hype.",
-                    "val.v6": "Empowerment Through Knowledge",
-                    "val.v6Desc": "Financial literacy is leverage. Understanding money enables individuals to negotiate better, invest smarter, build stronger businesses, and reduce vulnerability.",
-                    "val.v7": "Community Growth",
-                    "val.v7Desc": "We rise by elevating others. SMARTI CENTS fosters a culture of shared learning, collaboration, and accountability among ambitious individuals committed to advancement.",
-
+                    "val.v1": "Integrity",
+                    "val.v1Desc": "Transparent, honest financial and regulatory guidance at all times.",
+                    "val.v2": "Excellence",
+                    "val.v2Desc": "High standard of corporate training, advisory, and execution.",
+                    "val.v3": "Empowerment",
+                    "val.v3Desc": "Giving youth and entrepreneurs tools to take control of their economic destiny.",
+                    "val.v4": "Innovation",
+                    "val.v4Desc": "Modern digital tools and lean methodologies for agile growth.",
+                    "val.v5": "Sustainability",
+                    "val.v5Desc": "Building long-term wealth systems and resilient business models.",
                     "sec1.hisHeading": "Our History & Journey",
                     "his.m1Title": "Inception at Business Startup Center Njiro",
                     "his.m1Desc": "Founded in 2025 at Business Startup Center in Njiro, Arusha, Tanzania, establishing an advisory hub for youth and entrepreneur financial empowerment.",
@@ -4373,7 +4053,7 @@
 
                     "sec2.badge": "Section 2",
                     "sec2.title": "What We Do",
-                    "sec2.desc": "Our 6 core pillars from the official SMARTI CENTS catalog, crafted to deliver comprehensive support for individuals and businesses at every stage.",
+                    "sec2.desc": "Our 6 core pillars from the official Smarti Cent$ catalog — crafted to deliver end-to-end support for individuals and businesses at every stage.",
                     "srv.finTitle": "Financial Literacy",
                     "srv.finDesc": "Empowering individuals and SMEs with crucial money management knowledge to eliminate financial stress and build generational security.",
                     "srv.finB1": "Money management strategies",
@@ -4381,13 +4061,13 @@
                     "srv.finB3": "Investment planning & wealth building",
                     "srv.finB4": "Personal & corporate advisory",
                     "srv.bizTitle": "Business Consultancy",
-                    "srv.bizDesc": "Full cycle corporate setup, regulatory compliance, and operational optimization to secure and scale your enterprise.",
+                    "srv.bizDesc": "Full-cycle corporate setup, regulatory compliance, and operational optimization to secure and scale your enterprise.",
                     "srv.bizB1": "Company & business registration (BRELA)",
                     "srv.bizB2": "Strategic business advisor & planning support",
                     "srv.bizB3": "Management & HR operational support",
                     "srv.bizB4": "Tax compliance support (TRA, VAT, filings)",
                     "srv.carTitle": "Career Development",
-                    "srv.carDesc": "Empowering professionals and teams with in demand skills, leadership frameworks, and actionable career pathways.",
+                    "srv.carDesc": "Empowering professionals and teams with in-demand skills, leadership frameworks, and actionable career pathways.",
                     "srv.carB1": "Corporate training & team workshops",
                     "srv.carB2": "Guide for professional growth & roadmaps",
                     "srv.carB3": "Leadership & executive soft skills",
@@ -4400,44 +4080,35 @@
                     "srv.entB4": "Pitch deck preparation & funding readiness",
                     "srv.menTitle": "Mentorship",
                     "srv.menDesc": "Direct, dedicated guidance from seasoned executives and industry leaders to guide founders through challenges.",
-                    "srv.menB1": "One on one founder & executive coaching",
+                    "srv.menB1": "One-on-one founder & executive coaching",
                     "srv.menB2": "Peer mastermind circles & experience sharing",
                     "srv.menB3": "Youth & female entrepreneur mentorship",
                     "srv.menB4": "Accountability tracking & objective setting",
                     "srv.digTitle": "Digital Innovation",
-                    "srv.digDesc": "Harnessing tech tools to automate workflows, track bookkeeping in real time, and digitally scale across markets.",
-                    "srv.digB1": "Digital business solutions & setups",
-                    "srv.digB2": "Smart budgeting & accounting software tools",
-                    "srv.digB3": "Digital payments & invoicing workflows",
-                    "srv.digB4": "Cyber security & data backup guidance",
+                    "srv.digDesc": "Harnessing tech tools to automate workflows, track bookkeeping in real-time, and digitally scale across markets.",
+                    "srv.digB1": "Digital business solutions & automation",
+                    "srv.digB2": "Financial tracking dashboards & analytics",
+                    "srv.digB3": "Resources & inventory management tools",
+                    "srv.digB4": "Cloud accounting & CRM integrations",
 
-                    "trac.badge": "Traction & Impact",
-                    "trac.title": "Our Proven Track Record",
-                    "trac.desc": "Our work is not theoretical. It is practical, measurable, and community centered.",
-                    "trac.s1Title": "Youth Reached Directly",
-                    "trac.s1Desc": "Across universities and community platforms through structured financial literacy and business boot camps.",
-                    "trac.s2Title": "SMEs Empowered",
-                    "trac.s2Desc": "Within our surrounding community through tailored advisory sessions, business structuring, and operational support.",
-                    "trac.s3Title": "SMEs Supported via Consultancy",
-                    "trac.s3Desc": "Navigated cash flow instability, compliance gaps, pricing strategy, and growth planning to stabilize operations.",
-                    "trac.cap1": "Mentorship and training sessions with university scholars and emerging entrepreneurs.",
-                    "trac.cap2": "Hands-on business bootcamps delivering practical financial and operational frameworks.",
-                    "trac.question": "The question is simple: Why not you?",
-
-                    "banner.title": "Get in touch with us today,",
-                    "banner.strong": "LET'S FIX IT NOW.",
-                    "banner.btn": "TALK TO OUR ADVISORS",
+                    "banner.h3": "WE HELP YOU GROW WITH CONFIDENCE.",
+                    "banner.sub": "Let's solve your financial uncertainties, business registration hurdles, and growth bottlenecks today.",
+                    "banner.p1": "Smart advice.",
+                    "banner.p2": "Better decisions.",
+                    "banner.p3": "Strong finances.",
+                    "banner.p4": "Sustainable future.",
+                    "banner.btn": "GET IN TOUCH WITH US TODAY",
 
                     "sec3.badge": "Section 3",
                     "sec3.title": "Where We Work",
-                    "sec3.desc": "Headquartered in the vibrant commercial hub of Arusha, with active outreach, on site clinics, and digital advisory operating across all Tanzanian regions.",
+                    "sec3.desc": "Headquartered in the vibrant commercial hub of Arusha, with active outreach, on-site clinics, and digital advisory operating across all Tanzanian regions.",
                     "hq.tag": "Headquarters",
                     "hq.title": "Arusha HQ Hub",
                     "hq.subtitle": "Central Operations & Innovation Desk",
                     "hq.locTitle": "Physical Address",
-                    "hq.locDesc": "@ IBUSC, IAA Arusha Njiro, Tanzania",
+                    "hq.locDesc": "Business Startup Center, Njiro, Arusha, Tanzania",
                     "hq.hoursTitle": "Visiting Hours",
-                    "hq.hoursDesc": "Monday to Friday: 08:30 AM to 05:30 PM (EAT) | Saturday: 09:00 AM to 01:00 PM",
+                    "hq.hoursDesc": "Monday – Friday: 08:30 AM – 05:30 PM (EAT) | Saturday: 09:00 AM – 01:00 PM",
                     "hq.contactTitle": "Direct Hotline & WhatsApp",
                     "hq.mailTitle": "Official Email",
                     "hq.btnBook": "Book an Appointment at HQ",
@@ -4447,87 +4118,77 @@
                     "zone.coastal": "Coastal & Eastern Zone",
                     "zone.lake": "Lake Zone",
                     "zone.central": "Central Zone",
-                    "zone.highlands": "Southern Highlands Zone",
-                    "zone.western": "Western & Southern Zone",
-                    "reg.callout": "Including Zanzibar (Unguja & Pemba): Our digital consultancy and on demand travel workshops ensure no entrepreneur is left behind.",
+                    "zone.highlands": "Southern Highlands",
+                    "zone.western": "Western & Southern",
+                    "reg.callout": "Including Zanzibar (Unguja & Pemba): Our digital consultancy and on-demand travel workshops ensure no entrepreneur is left behind.",
 
                     "sec4.badge": "Section 4",
                     "sec4.title": "News & Stories",
-                    "sec4.desc": "Explore official announcements, client success stories, executive leadership perspectives, and downloadable guides.",
+                    "sec4.desc": "Explore our latest announcements (Matangazo), real success testimonials, official publications, and leadership perspectives.",
                     "tab.matangazo": "Matangazo (Announcements)",
                     "tab.testimonials": "Testimonials",
                     "tab.mgmt": "Management Words",
                     "tab.pubs": "Official Publications",
                     "ann.tagWorkshop": "Workshop",
-                    "ann.tagClinic": "Tax Clinic",
+                    "ann.tagClinic": "Compliance Clinic",
                     "ann.tagGrant": "Pitch Day",
-                    "ann.t1": "Youth Financial Literacy Masterclass in Arusha",
-                    "ann.d1": "A three day intensive boot camp covering budgeting, smart investments, cash flow survival for early founders, and digital record keeping.",
-                    "ann.t2": "SME Legal & Tax Compliance Open Clinic",
-                    "ann.d2": "Free one on one audit for small enterprises needing tax regularization, annual returns filing, and license renewal support.",
-                    "ann.t3": "Tanzania SME Growth Pitch Day",
-                    "ann.d3": "Connecting vetted entrepreneurs from Dodoma, Mwanza, and Dar es Salaam with micro finance institutions and angels.",
-                    "tst.q1": "SMARTI CENTS handled our complete BRELA business registration and TRA compliance in days. Their cash flow system quadrupled our monthly retail profits!",
-                    "tst.q2": "As a university graduate, their career mentorship gave me the exact skills and confidence to land my financial analyst position. SMARTI CENTS transforms lives!",
-                    "tst.q3": "Their enterprise mentorship gave our Mwanza retail stores the systems needed to manage inventory and scale profit. 'Let's fix it now' is real action with them.",
-                    "mgmt.h3": "Financial literacy is not a luxury, it is the cornerstone of sovereignty",
-                    "mgmt.p1": "At SMARTI CENTS, our mandate stems from one core conviction: every Tanzanian—from the graduate starting in Arusha to the factory owner in Mbeya or Dar es Salaam—deserves clear financial truth to build their economic future.",
-                    "mgmt.p2": "Many fail not because they lack passion, but because of regulatory confusion, tax penalties, and absent cash flow literacy. We founded SMARTI CENTS to say: 'Get in touch with us today, let's fix it now.' Our team is dedicated to your long term success.",
-                    "mgmt.quote": "Smart advice leads to better decisions. Better decisions build strong finances and a sustainable future.",
-                    "mgmt.teamBadge": "Leadership & Governance",
-                    "mgmt.teamTitle": "Management Team",
-                    "mgmt.teamDesc": "SMARTI CENTS is powered by a focused team of six professionals bringing together expertise in finance, business advisory, research, client relations, operations, and strategy. We operate lean, collaborative, and execution driven combining analytical rigor with practical market understanding. Our team is united by one mandate: deliver measurable financial transformation for every client we serve.",
-                    "team.klein": "Chief Director",
-                    "team.masuke": "Executive Administrator",
-                    "team.haitham": "Communications & I.T Admin",
-                    "team.raheali": "Finance Administrator",
-                    "team.ally": "Operations Administrator",
-                    "team.ndazi": "Finance Administrator",
-
+                    "ann.t1": "Arusha Youth Financial Masterclass",
+                    "ann.d1": "A 3-day intensive boot camp covering budgeting, smart investments, cash flow survival for early founders, and digital record keeping.",
+                    "ann.t2": "BRELA & TRA Tax Compliance Week",
+                    "ann.d2": "Free one-on-one audit for small enterprises needing tax regularization, annual returns filing, and license renewal support.",
+                    "ann.t3": "Tanzania SME Upscaling Forum",
+                    "ann.d3": "Connecting ambitious entrepreneurs from Dodoma, Mwanza, and Dar es Salaam with angel investors, bank credit lines, and mentors.",
+                    "tst.q1": "\"Smarti Cent$ completely sorted out our company registration with BRELA and handled our TRA tax compliance within days. Their financial tracking tools allowed us to quadruple our monthly turnover with zero bookkeeping stress!\"",
+                    "tst.q2": "\"As a university graduate, the Career Development training gave me the exact financial mindset and interview skills needed to secure a corporate analyst position. Smarti Cent$ is changing Tanzanian youth lives!\"",
+                    "tst.q3": "\"Their entrepreneurship mentorship gave our retail franchise in Mwanza clear scaling tips and inventory controls. 'Let's fix it now' isn't just a slogan for them — it's real execution.\"",
+                    "mgmt.h3": "\"Financial Empowerment is the Foundation of Freedom\"",
+                    "mgmt.p1": "At Smarti Cent$, our purpose stems from a simple, unyielding conviction: everyone—from an aspiring youth in Arusha to a burgeoning business owner in Mbeya or Dar es Salaam—deserves transparent, practical tools to control their economic destiny.",
+                    "mgmt.p2": "Many fail not because they lack passion, but because of regulatory confusion, tax penalties, and absent cash-flow literacy. We founded Smarti Cent$ to say: 'Get in touch with us today, let's fix it now.' Our team is dedicated to your long-term success.",
+                    "mgmt.quote": "\"Smart advice creates better decisions. Better decisions build strong finances and a sustainable future.\"",
                     "pub.t1": "Tanzania SME Financial Health Report 2026",
-                    "pub.d1": "Comprehensive empirical research on liquidity management and compliance challenges among 1,000+ local enterprises.",
-                    "pub.t2": "BRELA & TRA Compliance Handbook for Startups",
-                    "pub.d2": "A step by step roadmap to registering LLCs, NGOs, TIN certificates, business licenses, and tax exemption pathways in Tanzania.",
-                    "pub.t3": "Personal & Enterprise Budgeting Toolkit",
-                    "pub.d3": "Practical budgeting templates, debt elimination guides, and investment roadmaps tailored for young professionals and families.",
-                    "pub.btn": "Download PDF Guide",
+                    "pub.d1": "Comprehensive empirical research on liquidity management and tax compliance barriers across 1,000+ local enterprises.",
+                    "pub.t2": "TRA & BRELA Startup Compliance Guide",
+                    "pub.d2": "A step-by-step roadmap to registering LLCs, NGOs, TIN certificates, business licenses, and tax exemption pathways in Tanzania.",
+                    "pub.t3": "Personal Financial Literacy Handbook",
+                    "pub.d3": "Practical budgeting templates, debt-elimination guides, and investment roadmaps tailored for young professionals and families.",
+                    "pub.btn": "Download Document",
 
                     "sec5.badge": "Section 5",
                     "sec5.title": "Get Involved",
-                    "sec5.desc": "Partner with us or build your career as we advance financial intelligence and enterprise resilience across Tanzania.",
+                    "sec5.desc": "Join our mission to transform Tanzania’s financial future. Discover career openings, internships, volunteer circles, and strategic partnerships.",
                     "inv.workTitle": "Work With Us",
-                    "inv.workDesc": "We are seeking passionate business trainers, finance coaches, and research fellows driven to make a tangible national impact.",
-                    "inv.w1": "Graduate internship opportunities in finance & SME advisory",
-                    "inv.w2": "Certified financial literacy workshop facilitators",
-                    "inv.w3": "Regional brand ambassadors across university campuses",
-                    "inv.w4": "Volunteer mentors for grassroots community clinics",
-                    "inv.btnApply": "Apply to Join the Team",
-                    "inv.partTitle": "Partnership Pathways",
-                    "inv.partDesc": "Collaborate with SMARTI CENTS to collaboratively design impactful CSR initiatives, financial inclusion programs, and institutional incubation desks.",
-                    "inv.p1": "Banks, SACCOs, and Microfinance Institutions",
-                    "inv.p2": "International NGOs and Youth Development Agencies",
-                    "inv.p3": "Government Agencies and Regional Secretariats",
-                    "inv.p4": "Corporate Foundations & CSR Sponsors",
-                    "inv.btnPartner": "Propose a Strategic Partnership",
+                    "inv.workDesc": "We are constantly on the lookout for visionary trainers, financial analysts, legal consultants, and youth champions who share our zeal for impact.",
+                    "inv.w1": "Graduate Internship Programs (Finance & Business)",
+                    "inv.w2": "Certified Financial Literacy Trainers & Facilitators",
+                    "inv.w3": "Regional Brand Ambassadors across Tanzanian campuses",
+                    "inv.w4": "Volunteer Mentors for community clinics",
+                    "inv.btnApply": "Apply to Join Our Team",
+                    "inv.partTitle": "Partnership",
+                    "inv.partDesc": "Collaborate with Smarti Cent$ to co-design impactful CSR initiatives, financial inclusion programs, and institutional incubation desks.",
+                    "inv.p1": "Banks & Financial Institutions (Youth Credit Readiness)",
+                    "inv.p2": "International NGOs & Developmental Agencies",
+                    "inv.p3": "Government agencies (Local Government & Regional Secretariats)",
+                    "inv.p4": "Corporate CSR & Entrepreneurship Foundations",
+                    "inv.btnPartner": "Propose a Partnership",
 
-                    "cta.h2": "Get in touch with us today, LET'S FIX IT NOW.",
-                    "cta.sub": "Whether you need rapid BRELA company registration, TRA tax compliance, financial literacy boot camps, or digital tracking tools, our team is ready.",
-                    "cta.btnNow": "Speak With an Advisor Now",
+                    "cta.h2": "Get In Touch With Us Today, LET'S FIX IT NOW.",
+                    "cta.sub": "Whether you need urgent BRELA business registration, TRA tax advice, financial literacy workshops, or digital tracking solutions — our Arusha HQ and regional advisors are ready to assist.",
+                    "cta.btnNow": "Speak to an Advisor Now",
 
-                    "ft.desc": "SMARTI CENTS is dedicated to empowering Tanzanian youth, students, and businesses through practical financial literacy, business consultancy, career development, mentorship, and digital innovation.",
-                    "ft.quickLinks": "Quick Links",
+                    "ft.desc": "Smarti Cent$ is dedicated to empowering Tanzanian youth and entrepreneurs through Financial Literacy, Business Consultancy, Career Development, Mentorship, and Digital Innovation.",
+                    "ft.quickLinks": "Quick Sections",
                     "ft.services": "Our Services",
-                    "ft.contact": "HQ & Inquiries",
+                    "ft.contact": "Headquarters & Contact",
                     "ft.commitment": "Smart advice. Better decisions. Strong finances. Sustainable future."
                 },
-                "sw": {
+                sw: {
                     "brand.tagline": "Kuwezesha mustakabali wako wa kifedha",
-                    "nav.whoWeAre": "1. Sisi ni Nani",
-                    "nav.whatWeDo": "2. Tunachofanya",
-                    "nav.whereWeWork": "3. Tunapofanyia Kazi",
-                    "nav.newsStories": "4. Habari & Simulizi",
-                    "nav.getInvolved": "5. Shiriki Nasi",
-                    "nav.sub.profile": "Jina na Wasifu wa Shirika",
+                    "nav.whoWeAre": "Kuhusu Sisi",
+                    "nav.whatWeDo": "Tunachofanya",
+                    "nav.whereWeWork": "Tunapofanyia Kazi",
+                    "nav.newsStories": "Habari na Simulizi",
+                    "nav.getInvolved": "Shiriki Nasi",
+                    "nav.sub.profile": "Jina na Wasifu wa Taasisi",
                     "nav.sub.vision": "Maono Yetu",
                     "nav.sub.mission": "Dhamira Yetu",
                     "nav.sub.values": "Maadili Yetu",
@@ -4535,162 +4196,145 @@
                     "nav.sub.finlit": "Elimu ya Fedha",
                     "nav.sub.consult": "Ushauri wa Biashara",
                     "nav.sub.career": "Kukuza Taaluma",
-                    "nav.sub.entrep": "Ujasiriamali",
-                    "nav.sub.mentor": "Ulezi wa Biashara",
+                    "nav.sub.entrepreneurship": "Ujasiriamali",
+                    "nav.sub.mentorship": "Ulezi (Mentorship)",
                     "nav.sub.digital": "Ubunifu wa Kidijitali",
-                    "nav.sub.hq": "Makao Makuu Arusha",
-                    "nav.sub.regions": "Mikoa ya Tanzania",
+                    "nav.sub.hq": "Makao Makuu: Arusha",
+                    "nav.sub.regions": "Mikoa Yote ya Tanzania",
                     "nav.sub.matangazo": "Matangazo",
                     "nav.sub.testimonials": "Ushuhuda",
                     "nav.sub.mgmt": "Neno la Uongozi",
                     "nav.sub.pubs": "Machapisho Rasmi",
                     "nav.sub.workWithUs": "Fanya Kazi Nasi",
-                    "nav.sub.partnership": "Ushirikiano",
+                    "nav.sub.partnership": "Ushirikiano (Partnership)",
                     "cta.fixNow": "Tutatue Sasa",
-                    "hq.short": "HQ: Business Startup Center, Njiro, Tanzania • Huduma Nchi Nzima",
+                    "hq.short": "Makao Makuu: Business Startup Center, Njiro, Tanzania · Tunafanya kazi kote nchini",
 
                     "hero.badge1": "Tunakusaidia Kukua kwa Kujiamini",
-                    "hero.badge2": "Arusha HQ • Huduma Tanzania Nzima",
-                    "hero.title1": "Kuwezesha",
-                    "hero.title2": "Mustakabali Wako wa Kifedha.",
-                    "hero.sub": "SMARTI CENTS ni shirika la elimu ya fedha na ushauri wa kibiashara lililojitolea kuwawezesha vijana, wanafunzi, wajasiriamali na wafanyabiashara wadogo kupitia mafunzo ya vitendo ya kifedha, kukuza ujasiriamali na suluhu za kidijitali za kibiashara.",
-                    "hero.btnServices": "Angalia Huduma Zetu",
+                    "hero.badge2": "HQ Arusha · Huduma Tanzania Nzima",
+                    "hero.title1": "Tunawezesha Mustakabali",
+                    "hero.title2": "Wako wa Kifedha.",
+                    "hero.sub": "Ushauri thabiti. Maamuzi bora. Fedha dhabiti. Mustakabali endelevu. Malengo yako, ahadi yetu. Tukiwawezesha vijana, wajasiriamali na biashara kote Tanzania.",
+                    "hero.btnServices": "Gundua Huduma Zetu",
                     "hero.btnTouch": "Wasiliana Nasi Leo",
                     "hero.statRegions": "Mikoa ya Tanzania",
-                    "hero.statYouth": "Vijana Waliofikiwa Moja kwa Moja",
-                    "hero.statBiz": "SMEs Zilizoshauriwa",
-                    "hero.statEmpowered": "SMEs Zilizowezeshwa",
-                    "hero.pillarTitle": "Kituo cha Ukuaji & Elimu",
-                    "hero.cardHeadline": "Kwanini SMARTI CENTS?",
-                    "hero.cardSub": "Tunarahisisha masuala magumu ya kifedha, kisheria na mifumo kuwa mikakati rahisi ya kutengeneza utajiri endelevu.",
-                    "hero.v1Title": "Elimu ya Vitendo ya Kifedha",
-                    "hero.v1Desc": "Upangaji bajeti, mipango ya fedha, usimamizi wa SMEs na programu za nidhamu ya kifedha.",
-                    "hero.v2Title": "Kukuza Biashara & Ulezi",
-                    "hero.v2Desc": "Kubadilisha stadi za kazi na ufundi kuwa biashara endelevu zenye faida kupitia ulezi makini.",
-                    "hero.v3Title": "Suluhu za Kidijitali za Kijanja",
-                    "hero.v3Desc": "Programu za bajeti, mifumo ya kidijitali na zana bunifu zinazochochea tija ya jamii.",
+                    "hero.statYouth": "Walioelimishwa",
+                    "hero.statBiz": "Biashara Zilizoshauriwa",
+                    "hero.pillarTitle": "Kituo cha Ukuaji na Elimu",
+                    "hero.cardHeadline": "Kwa Nini Smarti Cent$?",
+                    "hero.cardSub": "Tunabadilisha changamoto za kifedha, kisheria na mifumo kuwa fursa thabiti za mafanikio ya kudumu.",
+                    "hero.v1Title": "Ushauri Mahiri na Mwongozo",
+                    "hero.v1Desc": "Mbinu sahihi za usimamizi wa mtiririko wa pesa za binafsi na biashara.",
+                    "hero.v2Title": "Fedha Imara na Uzingatiaji wa Sheria",
+                    "hero.v2Desc": "Kuanzia usajili (BRELA) hadi uzingatiaji wa kodi (TRA) na makadirio.",
+                    "hero.v3Title": "Malengo Yako, Ahadi Yetu",
+                    "hero.v3Desc": "Ulezi unaohakikisha kukuza biashara na ustahimilivu wa muda mrefu.",
 
                     "sec1.badge": "Sehemu ya 1",
-                    "sec1.title": "Sisi ni Nani",
-                    "sec1.desc": "Ifahamu SMARTI CENTS: wasifu wa shirika letu, maono, dhamira, maadili yetu makuu, na safari yetu kuanzia Arusha hadi kote nchini Tanzania.",
+                    "sec1.title": "Kuhusu Sisi (Who We Are)",
+                    "sec1.desc": "Ifahamu Smarti Cent$ — wasifu wa shirika letu, maono, dhamira, maadili yetu makuu, na safari yetu kuanzia Arusha hadi kote nchini Tanzania.",
                     "sec1.profTitle": "Jina na Wasifu wa Shirika",
-                    "sec1.profText1": "SMARTI CENTS ni shirika la elimu ya fedha na ushauri wa kibiashara lililojitolea kuwawezesha vijana, wanafunzi, wajasiriamali na wafanyabiashara wadogo kupitia mafunzo ya vitendo ya kifedha, kukuza ujasiriamali na suluhu za kidijitali za kibiashara.",
-                    "sec1.profText2": "Utaalamu wetu unalenga upangaji wa bajeti, mipango ya fedha, usimamizi wa biashara ndogo na za kati (SMEs), ushauri wa kibiashara, mafunzo ya ujasiriamali, ulezi wa biashara changa na programu za elimu ya fedha. Tunasaidia kubadilisha ujuzi wa kiufundi na stadi za kazi kuwa biashara zenye faida na endelevu.",
-                    "sec1.profText3": "Pia SMARTI CENTS inakuza ubunifu na mabadiliko ya kidijitali kwa kusaidia utengenezaji wa zana za kijanja za kifedha, programu tumizi za bajeti na suluhu za usimamizi wa biashara zenye lengo la kuboresha nidhamu ya fedha, tija na ukuaji wa kiuchumi miongoni mwa jamii na wajasiriamali chipukizi.",
-                    "sec1.visTitle": "Maono Yetu",
-                    "sec1.visText": "Kujenga jamii yenye uelewa wa kifedha na iliyowezeshwa kiuchumi kote nchini Tanzania.",
-                    "sec1.misTitle": "Dhamira Yetu",
-                    "sec1.misText": "Kutoa suluhu jumuishi na za vitendo za upatikanaji wa huduma za kifedha na uwezeshaji uwezo zinazowezesha watu binafsi na biashara kufanya maamuzi sahihi, kuimarisha uimara wa kifedha, na kutengeneza thamani ya kiuchumi ya muda mrefu.",
-                    "sec1.valHeading": "Maadili Yetu Makuu",
-                    "sec1.valSub": "Misingi yenye kuongeza thamani: tukiongozwa na nidhamu, ukweli, na mtazamo wa muda mrefu.",
-                    "val.v1": "Akili ya Kifedha Badala ya Mbwembwe",
-                    "val.v1Desc": "Pesa ni mfumo, sio kamari. Tunahimiza fikra zenye mpangilio, maamuzi sahihi na matumizi ya nidhamu ya mtaji bila njia za mkato.",
-                    "val.v2": "Uwajibikaji Binafsi",
-                    "val.v2Desc": "Kipato, madeni, akiba na uwekezaji huanza na uwajibikaji binafsi. Tunakataa visingizio na kuongea ukweli unaoaminika.",
-                    "val.v3": "Elimu ya Vitendo",
-                    "val.v3Desc": "Nadharia bila vitendo ni kelele. Tunajikita katika mbinu halisi, mifano hai na zana zinazobadili tabia mara moja.",
-                    "val.v4": "Mtazamo wa Muda Mrefu",
-                    "val.v4Desc": "Tunafikiri kwa miongo, sio siku ya malipo pekee. Utajiri hujengwa kwa ustahimilivu na uvumilivu wa kimkakati.",
-                    "val.v5": "Nidhamu & Muendelezo",
-                    "val.v5Desc": "Ukuaji wa fedha unahitaji zoezi la kila siku. Kupanga bajeti, kufuatilia na kuwekeza tena kila siku.",
-                    "val.v6": "Uwezeshaji Kupitia Maarifa",
-                    "val.v6Desc": "Uelewa wa kifedha ni nguzo kuu. Watu wakielewa pesa, hufanya maamuzi nadhifu na kujenga biashara zenye nguvu.",
-                    "val.v7": "Kukua Pamoja na Jamii",
-                    "val.v7Desc": "Tunainuka kwa kuwainua wengine. SMARTI CENTS inakuza utamaduni wa kujifunza pamoja na kusaidiana kufikia mafanikio.",
-
-                    "sec1.hisHeading": "Historia & Safari Yetu",
+                    "sec1.profText1": "Smarti Cent$ ni taasisi kiongozi ya Kitanzania ya ushauri na ukuzaji wa uwezo iliyoanzishwa ili kuwawezesha vijana, wajasiriamali na kampuni kwa elimu ya fedha, ushauri wa kisheria na biashara, na zana za kisasa za kidijitali.",
+                    "sec1.profText2": "Tukiongozwa na kaulimbiu 'Empowering your financial future', Smarti Cent$ inaziba pengo kati ya wafanyabiashara wadogo na mifumo rasmi ya kifedha kupitia mafunzo ya vitendo, ulezi wa karibu na ushirikiano thabiti.",
+                    "sec1.visTitle": "Maono Yetu (Vision)",
+                    "sec1.visText": "Kuwa kinara mkuu nchini Tanzania na Afrika Mashariki katika kuleta uhuru wa kifedha, ujasiriamali wa ubunifu, na uzalishaji endelevu wa utajiri kwa vizazi vyote.",
+                    "sec1.misTitle": "Dhamira Yetu (Mission)",
+                    "sec1.misText": "Kuwajengea Watanzania ujuzi thabiti wa pesa, uelewa wa sheria na kodi, mwongozo wa kazi, na mifumo ya kidijitali ili wafanye maamuzi bora na kujenga mustakabali endelevu.",
+                    "sec1.valHeading": "Maadili Yetu Makuu (Values)",
+                    "val.v1": "Uadilifu (Integrity)",
+                    "val.v1Desc": "Ushauri wa wazi, wa kweli na wa kuaminika wa kifedha na udhibiti wakati wote.",
+                    "val.v2": "Ubora (Excellence)",
+                    "val.v2Desc": "Kiwango cha juu cha mafunzo ya kibiashara, ushauri, na utekelezaji.",
+                    "val.v3": "Uwezeshaji (Empowerment)",
+                    "val.v3Desc": "Kuwapa vijana na wajasiriamali maarifa ya kumiliki hatima yao ya kiuchumi.",
+                    "val.v4": "Ubunifu (Innovation)",
+                    "val.v4Desc": "Mifumo ya kisasa ya kidijitali na mbinu nyumbufu kwa ukuaji wa kasi.",
+                    "val.v5": "Uendelevu (Sustainability)",
+                    "val.v5Desc": "Kujenga mifumo thabiti ya utajiri na biashara zinazodumu vizazi na vizazi.",
+                    "sec1.hisHeading": "Historia Yetu na Safari Yetu",
                     "his.m1Title": "Kuanzishwa Business Startup Center Njiro",
-                    "his.m1Desc": "Ilianzishwa mwaka 2025 katika kituo cha Business Startup Center kilichopo Njiro, Arusha kama kitovu cha uwezeshaji vijana na wajasiriamali.",
-                    "his.m2Title": "Upanuzi wa Huduma za SMEs & Sheria",
-                    "his.m2Desc": "Kupanuka kwa huduma za usajili wa biashara na makampuni (BRELA), kodi za TRA na ushauri wa kisheria.",
+                    "his.m1Desc": "Ilianzishwa rasmi mwaka 2025 katika kituo cha Business Startup Center, Njiro, Arusha, Tanzania, kusaidia wajasiriamali na vijana kwa elimu ya fedha na ushauri wa kibiashara.",
+                    "his.m2Title": "Upanuzi wa Biashara na Sheria",
+                    "his.m2Desc": "Kuanzisha madawati rasmi ya usajili wa kampuni (BRELA), leseni na ushauri wa kodi wa TRA kwa wajasiriamali.",
                     "his.m3Title": "Ubunifu wa Zana za Kidijitali",
-                    "his.m3Desc": "Kuanzishwa kwa mifumo ya kidijitali ya uhasibu na ufuatiliaji fedha kwa wajasiriamali wa mikoa mbalimbali.",
-                    "his.m4Title": "Huduma za Kitaifa Tanzania Nzima",
-                    "his.m4Desc": "Makao Makuu yameimarishwa Njiro Arusha huku tukihudumia wateja na washirika katika mikoa yote 31 ya Tanzania na Zanzibar.",
+                    "his.m3Desc": "Kuzindua dashibodi za ufuatiliaji wa fedha na mifumo ya kiotomatiki ya hesabu inayowafikia wajasiriamali kote nchini.",
+                    "his.m4Title": "Huduma Tanzania Nzima",
+                    "his.m4Desc": "Makao Makuu yapo Business Startup Center, Njiro, Arusha huku tukihudumia wateja na washirika katika mikoa yote 31 ya Tanzania.",
 
                     "sec2.badge": "Sehemu ya 2",
-                    "sec2.title": "Tunachofanya",
-                    "sec2.desc": "Misingi yetu 6 mikuu kulingana na huduma rasmi za SMARTI CENTS: kusaidia ukuaji wako kuanzia wazo hadi kileleni.",
-                    "srv.finTitle": "Elimu ya Fedha",
-                    "srv.finDesc": "Kutoa maarifa thabiti ya usimamizi wa pesa ili kuondoa msongo wa mawazo na kujenga uchumi salama wa familia na biashara.",
-                    "srv.finB1": "Mbinu thabiti za usimamizi wa pesa",
-                    "srv.finB2": "Upangaji bajeti kwa watu binafsi & biashara",
-                    "srv.finB3": "Mipango ya uwekezaji na ukuzaji mali",
-                    "srv.finB4": "Ushauri binafsi na wa kitaasisi",
-                    "srv.bizTitle": "Ushauri wa Biashara",
-                    "srv.bizDesc": "Usajili kamili wa makampuni, kufuata sheria na mifumo ya kiutendaji kukuza na kulinda biashara yako.",
-                    "srv.bizB1": "Usajili wa makampuni na majina ya biashara (BRELA)",
-                    "srv.bizB2": "Ushauri elekezi na uandishi wa michanganuo ya biashara",
-                    "srv.bizB3": "Usimamizi wa biashara na rasilimali watu",
-                    "srv.bizB4": "Ushauri wa kufuata sheria za kodi (TRA, VAT, marejesho)",
-                    "srv.carTitle": "Kukuza Taaluma",
-                    "srv.carDesc": "Kuwawezesha wafanyakazi na timu kupata stadi zinazohitajika sokoni, uongozi na mifumo ya kukuza kipato.",
-                    "srv.carB1": "Mafunzo ya kisekta kwa mashirika na wafanyakazi",
-                    "srv.carB2": "Miongozo ya kukuza nafasi ya kazi na taaluma",
-                    "srv.carB3": "Stadi za uongozi na mahusiano kazini",
-                    "srv.carB4": "Vyeti na mafunzo maalum ya kujiendeleza",
-                    "srv.entTitle": "Ujasiriamali",
-                    "srv.entDesc": "Kubadili mawazo kuwa biashara zenye faida kupitia mbinu za kisasa za kuanzisha na kujaribu soko.",
+                    "sec2.title": "Tunachofanya (What We Do)",
+                    "sec2.desc": "Misingi yetu 6 mikuu kulingana na huduma rasmi za Smarti Cent$ — kusaidia ukuaji wako kuanzia wazo hadi kileleni.",
+                    "srv.finTitle": "Elimu ya Fedha (Financial Literacy)",
+                    "srv.finDesc": "Kuwajengea uwezo wa kipekee wa kusimamia fedha ili kuondoa msongo wa mawazo na kujenga utajiri wa kudumu.",
+                    "srv.finB1": "Usimamizi thabiti wa pesa (Money management)",
+                    "srv.finB2": "Bajeti ya biashara na ya mtu binafsi",
+                    "srv.finB3": "Mipango ya uwekezaji na kujenga mali",
+                    "srv.finB4": "Ushauri wa kibinafsi na wa mashirika",
+                    "srv.bizTitle": "Ushauri wa Biashara (Business Consultancy)",
+                    "srv.bizDesc": "Usajili wa kampuni, uzingatiaji wa sheria, na mifumo ya uendeshaji ili kulinda na kukuza biashara yako.",
+                    "srv.bizB1": "Usajili wa kampuni na majina ya biashara (BRELA)",
+                    "srv.bizB2": "Mshauri wa mikakati na mipango ya biashara",
+                    "srv.bizB3": "Usimamizi wa timu, HR na uendeshaji",
+                    "srv.bizB4": "Msaada wa uzingatiaji kodi (TRA, VAT, marejesho)",
+                    "srv.carTitle": "Kukuza Taaluma (Career Development)",
+                    "srv.carDesc": "Kuwajengea wataalamu ujuzi unaohitajika sokoni, uongozi na ramani ya kufanikiwa kazini.",
+                    "srv.carB1": "Mafunzo ya kishirika (Corporate training)",
+                    "srv.carB2": "Mwongozo wa ukuaji wa kitaalamu na ujuzi",
+                    "srv.carB3": "Ujuzi wa uongozi na mawasiliano",
+                    "srv.carB4": "Vyeti na beji za kitaalamu zinazotambulika",
+                    "srv.entTitle": "Ujasiriamali (Entrepreneurship)",
+                    "srv.entDesc": "Kubadilisha mawazo kuwa biashara zenye faida kupitia uthibitishaji na mikakati ya kupunguza hasara.",
                     "srv.entB1": "Mwongozo wa ubunifu na kuanzisha biashara",
-                    "srv.entB2": "Uendelevu na uimara wa biashara sokoni",
-                    "srv.entB3": "Mbinu za kukuza na kuongeza mauzo",
-                    "srv.entB4": "Uandaaji wa nyaraka za kuvutia wawekezaji",
-                    "srv.menTitle": "Ulezi wa Biashara",
-                    "srv.menDesc": "Mwongozo wa ana kwa ana kutoka kwa viongozi wabobezi na wataalamu kuwaongoza waanzilishi wa biashara.",
-                    "srv.menB1": "Ulezi wa ana kwa ana kwa waanzilishi na wakurugenzi",
-                    "srv.menB2": "Vikundi vya kushauriana na kubadilishana uzoefu",
+                    "srv.entB2": "Uendelevu na ustahimilivu wa soko",
+                    "srv.entB3": "Mbinu za kupanua biashara na ongezeko la mapato",
+                    "srv.entB4": "Maandalizi ya mawasilisho ya uwekezaji (Pitch)",
+                    "srv.menTitle": "Ulezi (Mentorship)",
+                    "srv.menDesc": "Mwongozo wa karibu kutoka kwa viongozi na wafanyabiashara waliobobea kukuongoza katika changamoto.",
+                    "srv.menB1": "Ulezi wa ana kwa ana kwa waanzilishi (1-on-1)",
+                    "srv.menB2": "Mikutano ya pamoja ya kubadilishana uzoefu",
                     "srv.menB3": "Ulezi maalum kwa vijana na wanawake wajasiriamali",
-                    "srv.menB4": "Ufuatiliaji wa malengo na uwajibikaji",
-                    "srv.digTitle": "Ubunifu wa Kidijitali",
-                    "srv.digDesc": "Kutumia teknolojia kuendesha shughuli kwa urahisi, kufanya mahesabu kidijitali na kupanua wigo wa biashara.",
-                    "srv.digB1": "Suluhu na mifumo ya biashara za kidijitali",
-                    "srv.digB2": "Zana za kifedha, upangaji bajeti na programu za uhasibu",
-                    "srv.digB3": "Malipo ya kidijitali na utoaji ankara mtandaoni",
-                    "srv.digB4": "Usalama wa taarifa na utunzaji kumbukumbu kidijitali",
+                    "srv.menB4": "Kuweka malengo na ufuatiliaji wa uwajibikaji",
+                    "srv.digTitle": "Ubunifu wa Kidijitali (Digital Innovation)",
+                    "srv.digDesc": "Kutumia teknolojia kuendesha biashara kiotomatiki na kufuatilia hesabu kwa wakati halisi popote ulipo.",
+                    "srv.digB1": "Suluhisho za biashara dijitali na otomatiki",
+                    "srv.digB2": "Dashibodi za ufuatiliaji wa fedha na uchambuzi",
+                    "srv.digB3": "Zana za usimamizi wa rasilimali na stoo",
+                    "srv.digB4": "Mifumo ya wingu ya uhasibu na wateja (CRM)",
 
-                    "trac.badge": "Ushuhuda wa Ufanisi",
-                    "trac.title": "Matokeo Yetu Yanayopimika",
-                    "trac.desc": "Kazi yetu sio ya nadharia. Ni ya vitendo, inapimika, na inalenga jamii.",
-                    "trac.s1Title": "Vijana Waliofikiwa Moja kwa Moja",
-                    "trac.s1Desc": "Kupitia vyuo vikuu na majukwaa ya jamii kwa mafunzo rasmi ya elimu ya fedha na kambi za biashara.",
-                    "trac.s2Title": "SMEs Zilizowezeshwa",
-                    "trac.s2Desc": "Katika jamii yetu kupitia vipindi maalum vya ushauri, miundo ya biashara na msaada wa kiutendaji.",
-                    "trac.s3Title": "SMEs Zilizosaidiwa Kiusimamizi",
-                    "trac.s3Desc": "Zilipatiwa ushauri kutatua changamoto za mzunguko wa fedha, kodi, bei na mipango ya kukuza biashara.",
-                    "trac.cap1": "Vipindi vya ulezi na mafunzo kwa wanafunzi wa vyuo vikuu na wajasiriamali chipukizi.",
-                    "trac.cap2": "Kambi za mafunzo ya vitendo zikitoa mbinu za kifedha na kiutendaji kwa wafanyabiashara.",
-                    "trac.question": "Swali ni rahisi: Kwanini usiwe wewe?",
-
-                    "banner.title": "Wasiliana nasi leo,",
-                    "banner.strong": "TUTATUE SASA.",
-                    "banner.btn": "ONGEA NA WASHAURI WETU",
+                    "banner.h3": "TUNAKUSAIDIA KUKUA KWA KUJIAMINI.",
+                    "banner.sub": "Hebu tutatue mashaka yako ya kifedha, vikwazo vya usajili wa biashara, na changamoto za kodi leo.",
+                    "banner.p1": "Ushauri mahiri.",
+                    "banner.p2": "Maamuzi bora.",
+                    "banner.p3": "Fedha thabiti.",
+                    "banner.p4": "Mustakabali endelevu.",
+                    "banner.btn": "WASILIANA NASI LEO TUTATUE",
 
                     "sec3.badge": "Sehemu ya 3",
-                    "sec3.title": "Tunapofanyia Kazi",
-                    "sec3.desc": "Makao Makuu yapo kitovu cha biashara jijini Arusha, tukiwa na huduma na mafunzo yanayofika mikoa yote ya Tanzania.",
+                    "sec3.title": "Tunapofanyia Kazi (Where We Work)",
+                    "sec3.desc": "Makao Makuu yetu yapo jijini Arusha, huku tukiendesha kliniki, mafunzo na ushauri wa kidijitali katika mikoa yote ya Tanzania.",
                     "hq.tag": "Makao Makuu",
-                    "hq.title": "Kituo Kikuu cha Arusha",
-                    "hq.subtitle": "Uendeshaji Mkuu & Dawati la Ubunifu",
+                    "hq.title": "Kituo Kikuu cha Arusha (HQ)",
+                    "hq.subtitle": "Uratibu Mkuu na Dawati la Ubunifu",
                     "hq.locTitle": "Anwani ya Ofisi",
-                    "hq.locDesc": "@ IBUSC, IAA Arusha Njiro, Tanzania",
-                    "hq.hoursTitle": "Muda wa Kazi",
-                    "hq.hoursDesc": "Jumatatu hadi Ijumaa: Saa 2:30 Asubuhi hadi Saa 11:30 Jioni | Jumamosi: Saa 3:00 Asubuhi hadi Saa 7:00 Mchana",
-                    "hq.contactTitle": "Simu ya Moja kwa Moja & WhatsApp",
+                    "hq.locDesc": "Business Startup Center, Njiro, Arusha, Tanzania",
+                    "hq.hoursTitle": "Muda wa Kufungua",
+                    "hq.hoursDesc": "Jumatatu – Ijumaa: Saa 2:30 Asubuhi – Saa 11:30 Jioni | Jumamosi: Saa 3:00 Asubuhi – Saa 7:00 Mchana",
+                    "hq.contactTitle": "Simu na WhatsApp Moja kwa Moja",
                     "hq.mailTitle": "Barua Pepe Rasmi",
-                    "hq.btnBook": "Weka Miadi Ofisini Arusha",
-                    "reg.title": "Tunaendesha Shughuli Mikoa Yote ya Tanzania",
-                    "reg.desc": "Tunatekeleza warsha za mikoani, usajili na ushauri wa kidijitali katika mikoa yote 31 ya Tanzania Bara na Zanzibar:",
+                    "hq.btnBook": "Weka Miadi ya Kuja Ofisini HQ",
+                    "reg.title": "Tunafanya Kazi Mikoa Yote ya Tanzania",
+                    "reg.desc": "Tunaendesha warsha za kikanda, usajili wa makampuni, na ushauri katika mikoa yote 31 ya Tanzania Bara na Visiwani:",
                     "zone.northern": "Kanda ya Kaskazini",
-                    "zone.coastal": "Kanda ya Pwani & Mashariki",
+                    "zone.coastal": "Kanda ya Pwani na Mashariki",
                     "zone.lake": "Kanda ya Ziwa",
                     "zone.central": "Kanda ya Kati",
                     "zone.highlands": "Nyanda za Juu Kusini",
-                    "zone.western": "Kanda ya Magharibi & Kusini",
-                    "reg.callout": "Ikiwemo Zanzibar (Unguja & Pemba): Ushauri wetu wa kidijitali unahakikisha hakuna mjasiriamali anayeachwa nyuma.",
+                    "zone.western": "Kanda ya Magharibi na Kusini",
+                    "reg.callout": "Ikiwemo Zanzibar (Unguja na Pemba): Ushauri wetu wa kidijitali na safari maalum unahakikisha hakuna mjasiriamali anayeachwa nyuma.",
 
                     "sec4.badge": "Sehemu ya 4",
-                    "sec4.title": "Habari & Simulizi",
-                    "sec4.desc": "Fuatilia matangazo rasmi, ushuhuda wa mafanikio, ujumbe wa uongozi na machapisho ya kitaalamu.",
+                    "sec4.title": "Habari na Simulizi (News & Stories)",
+                    "sec4.desc": "Pata matangazo mapya, shuhuda za mafanikio, neno la uongozi mkuu, na machapisho rasmi ya bure.",
                     "tab.matangazo": "Matangazo",
                     "tab.testimonials": "Ushuhuda",
                     "tab.mgmt": "Neno la Uongozi",
@@ -4698,85 +4342,75 @@
                     "ann.tagWorkshop": "Warsha",
                     "ann.tagClinic": "Kliniki ya Kodi",
                     "ann.tagGrant": "Siku ya Pitch",
-                    "ann.t1": "Mafunzo Kabambe ya Elimu ya Fedha kwa Vijana Arusha",
-                    "ann.d1": "Kambi ya siku 3 ya vitendo kuhusu bajeti, uwekezaji, mzunguko wa fedha kwa waanzilishi na utunzaji hesabu kidijitali.",
-                    "ann.t2": "Kliniki ya Wazi ya Sheria & Kodi kwa SMEs",
-                    "ann.d2": "Uhakiki wa bure wa ana kwa ana kwa biashara ndogo zinazohitaji kurekebisha kodi na kujaza ripoti za kila mwaka.",
-                    "ann.t3": "Siku ya Wajasiriamali Wadogo Kukutana na Wawekezaji",
-                    "ann.d3": "Kuunganisha wajasiriamali kutoka Dodoma, Mwanza na Dar es Salaam na taasisi za kifedha.",
-                    "tst.q1": "SMARTI CENTS walikamilisha usajili wetu wa BRELA na kodi ya TRA kwa siku chache. Mfumo wao uliongeza faida yetu mara nne!",
-                    "tst.q2": "Kama mhitimu wa chuo, ulezi wao wa kikazi ulinipatia ujuzi na ujasiri uliowezesha kupata ajira ya mchambuzi wa fedha. SMARTI CENTS inabadili maisha!",
-                    "tst.q3": "Ulezi wao wa kibiashara ulitupatia mbinu za kupanua maduka yetu Mwanza na kudhibiti stoo. Kauli yao 'Let's fix it now' si maneno matupu, ni utendaji wa kweli.",
-                    "mgmt.h3": "Uhuru wa kifedha ndio msingi thabiti wa maendeleo ya kweli",
-                    "mgmt.p1": "Hapa SMARTI CENTS, lengo letu linatokana na ukweli mmoja: kila mtu, kutoka kijana anayeanza jijini Arusha hadi mmiliki wa kiwanda Mbeya au Dar es Salaam, anastahili maarifa ya wazi ya kujenga hatima yake ya kiuchumi.",
-                    "mgmt.p2": "Biashara nyingi hushindwa sio kwa kukosa bidii, bali kwa kutofahamu kodi, kanuni za BRELA na kukosa mbinu za mzunguko wa fedha. Tulianzisha SMARTI CENTS tukisema: 'Wasiliana nasi leo, tulirekebishe sasa.'",
-                    "mgmt.quote": "Ushauri thabiti huleta maamuzi bora. Maamuzi bora hujenga uchumi thabiti na mustakabali endelevu.",
-                    "mgmt.teamBadge": "Uongozi & Usimamizi",
-                    "mgmt.teamTitle": "Timu ya Uongozi",
-                    "mgmt.teamDesc": "SMARTI CENTS inaendeshwa na timu mahiri ya wataalamu sita wanaojumuisha ujuzi wa fedha, ushauri wa kibiashara, utafiti, mahusiano na wateja, operesheni na mikakati. Tunafanya kazi kwa ufanisi mkubwa ili kuleta mabadiliko chanya ya kifedha kwa kila mteja.",
-                    "team.klein": "Chief Director (Mkurugenzi Mkuu)",
-                    "team.masuke": "Executive Administrator (Msimamizi Mkuu)",
-                    "team.haitham": "Communications & I.T Admin (Mawasiliano na TEHAMA)",
-                    "team.raheali": "Finance Administrator (Msimamizi wa Fedha)",
-                    "team.ally": "Operations Administrator (Msimamizi wa Operesheni)",
-                    "team.ndazi": "Finance Administrator (Msimamizi wa Fedha)",
-
-                    "pub.t1": "Ripoti ya Afya ya Kifedha ya SMEs Tanzania 2026",
-                    "pub.d1": "Utafiti wa kina kuhusu usimamizi wa fedha taslimu na kufuata sheria miongoni mwa biashara zaidi ya 1,000 nchini.",
-                    "pub.t2": "Mwongozo wa Kufuata Sheria za BRELA & TRA kwa Wanaoanza",
-                    "pub.d2": "Mwongozo wa hatua kwa hatua wa kusajili kampuni, NGO, TIN, leseni za biashara na misamaha ya kodi nchini Tanzania.",
-                    "pub.t3": "Zana za Vitendo za Upangaji Bajeti Binafsi na ya Biashara",
-                    "pub.d3": "Mifumo rahisi ya bajeti, miongozo ya kuondoa madeni na njia za kukuza uwekezaji kwa vijana na familia.",
-                    "pub.btn": "Pakua Mwongozo wa PDF",
+                    "ann.t1": "Mafunzo Kabambe ya Fedha kwa Vijana Arusha",
+                    "ann.d1": "Kambi ya siku 3 inayohusu upangaji bajeti, uwekezaji, utunzaji wa kumbukumbu na njia za kukuza mtaji.",
+                    "ann.t2": "Wiki ya Uzingatiaji Sheria na Kodi (BRELA & TRA)",
+                    "ann.d2": "Ukaguzi wa bure wa hesabu na usaidizi wa leseni na marejesho kwa biashara ndogo na za kati.",
+                    "ann.t3": "Kongamano la Ukuzaji Wajasiriamali Tanzania",
+                    "ann.d3": "Kukutanisha wajasiriamali kutoka Dodoma, Mwanza na Dar es Salaam na wawekezaji na mabenki.",
+                    "tst.q1": "\"Smarti Cent$ walitusaidia usajili mzima wa kampuni yetu BRELA na kurekebisha kodi yetu ya TRA ndani ya siku chache. Dashibodi zao za fedha zimetuwezesha kuzidisha mapato mara nne bila msongo!\"",
+                    "tst.q2": "\"Kama mhitimu wa chuo, mafunzo yao ya Career Development yalinipa nidhamu ya pesa na maandalizi thabiti yaliyonifanya nipate kazi kwenye shirika kubwa. Smarti Cent$ wanabadilisha maisha!\"",
+                    "tst.q3": "\"Ulezi wao wa kibiashara ulitupatia mbinu za kupanua maduka yetu Mwanza na kudhibiti stoo. Kauli yao 'Let's fix it now' si maneno matupu — ni utendaji wa kweli.\"",
+                    "mgmt.h3": "\"Uwezeshaji wa Kifedha Ndio Msingi wa Uhuru wa Kweli\"",
+                    "mgmt.p1": "Hapa Smarti Cent$, lengo letu linatokana na ukweli mmoja: kila mtu—kutoka kijana anayeanza jijini Arusha hadi mmiliki wa kiwanda Mbeya au Dar es Salaam—anastahili maarifa ya wazi ya kujenga hatima yake ya kiuchumi.",
+                    "mgmt.p2": "Biashara nyingi hazifeli kwa kukosa shauku, bali kwa changamoto za sheria, adhabu za kodi, na ukosefu wa usimamizi wa mtiririko wa pesa. Tulianzisha Smarti Cent$ kusema: 'Wasiliana nasi leo, tutatue sasa.'",
+                    "mgmt.quote": "\"Ushauri thabiti unaleta maamuzi bora. Maamuzi bora yanajenga fedha dhabiti na mustakabali endelevu.\"",
+                    "pub.t1": "Ripoti ya Afya ya Kifedha ya Wajasiriamali Tanzania 2026",
+                    "pub.d1": "Utafiti wa kina kuhusu usimamizi wa mtaji na changamoto za uzingatiaji kodi katika biashara zaidi ya 1,000.",
+                    "pub.t2": "Mwongozo wa Kuanzisha Biashara (TRA & BRELA)",
+                    "pub.d2": "Mwelekeo wa hatua kwa hatua wa kusajili kampuni, NGO, namba ya TIN, leseni za biashara na unafuu wa kodi.",
+                    "pub.t3": "Kitabu cha Elimu ya Fedha Binafsi",
+                    "pub.d3": "Violezo vya bajeti, mbinu za kuondoa madeni, na njia salama za uwekezaji kwa vijana na familia.",
+                    "pub.btn": "Pakua Nyaraka Hii",
 
                     "sec5.badge": "Sehemu ya 5",
-                    "sec5.title": "Shiriki Nasi",
-                    "sec5.desc": "Ungana nasi au jiunge na timu yetu katika safari ya kujenga uelewa wa kifedha na kukuza biashara kote Tanzania.",
+                    "sec5.title": "Shiriki Nasi (Get Involved)",
+                    "sec5.desc": "Ungana nasi katika safari ya kuwezesha uchumi wa Tanzania. Gundua nafasi za kazi, mafunzo kazini (internship), na fursa za ushirikiano wa kimkakati.",
                     "inv.workTitle": "Fanya Kazi Nasi",
-                    "inv.workDesc": "Tunakaribisha wakufunzi mahiri wa biashara, washauri wa fedha na watafiti wenye ari ya kuleta matokeo chanya kwa taifa.",
-                    "inv.w1": "Nafasi za mafunzo ya vitendo (internships) kwenye fedha na usimamizi wa biashara",
-                    "inv.w2": "Wakufunzi walioidhinishwa wa elimu ya fedha na warsha",
-                    "inv.w3": "Mabalozi wa kikanda katika vyuo vikuu na vituo vya vijana",
-                    "inv.w4": "Washauri wa kujitolea kwa ajili ya kliniki za kibiashara za jamii",
-                    "inv.btnApply": "Tuma Maombi Kujiunga Nasi",
-                    "inv.partTitle": "Njia za Ushirikiano",
-                    "inv.partDesc": "Shirikiana na SMARTI CENTS kubuni programu bunifu za kijamii (CSR), ushirikishwaji wa kifedha na vituo vya kulea biashara.",
-                    "inv.p1": "Benki, SACCOs na Taasisi Ndogo za Kifedha",
-                    "inv.p2": "Mashirika Yasiyo ya Kiserikali (NGOs) na Mashirika ya Kimataifa",
-                    "inv.p3": "Taasisi za Umma na Sekretarieti za Mikoa",
-                    "inv.p4": "Taasisi za Kibiashara na Wafadhili wa CSR",
-                    "inv.btnPartner": "Pendekeza Ushirikiano wa Kimkakati",
+                    "inv.workDesc": "Daima tunakaribisha wakufunzi, wataalamu wa fedha na kodi, na viongozi wa vijana wenye shauku ya kuleta matokeo chanya kwenye jamii.",
+                    "inv.w1": "Programu ya Mafunzo Kazini kwa Wahitimu (Internships)",
+                    "inv.w2": "Wakufunzi na Wawezeshaji wa Elimu ya Fedha",
+                    "inv.w3": "Mabalozi wa Smarti Cent$ katika Vyuo Vikuu nchini",
+                    "inv.w4": "Washauri wa Kujitolea kwa jamii za mitaani",
+                    "inv.btnApply": "Tuma Maombi ya Kujiunga Nasi",
+                    "inv.partTitle": "Ushirikiano (Partnership)",
+                    "inv.partDesc": "Shiriki na Smarti Cent$ kubuni miradi ya kijamii (CSR), ujumuishi wa kifedha, na madawati ya kukuza biashara.",
+                    "inv.p1": "Mabenki na Taasisi za Kifedha (Kuwezesha Vijana Mikopo)",
+                    "inv.p2": "Mashirika Yasiyo ya Kiserikali (NGOs) na Mashirika ya Maendeleo",
+                    "inv.p3": "Taasisi za Kiserikali (TAMISEMI na Tawala za Mikoa)",
+                    "inv.p4": "Makampuni Binafsi na Mifuko ya Uwezeshaji",
+                    "inv.btnPartner": "Pendekeza Ushirikiano",
 
-                    "cta.h2": "Wasiliana nasi leo, TUTATUE SASA.",
-                    "cta.sub": "Iwe unahitaji usajili wa haraka wa BRELA, ushauri wa kodi wa TRA, warsha za elimu ya fedha, au mifumo ya kidijitali, ofisi yetu ya Arusha na timu zetu za mikoani zipo tayari.",
+                    "cta.h2": "Wasiliana Nasi Leo, TUTATUE SASA.",
+                    "cta.sub": "Iwe unahitaji usajili wa haraka wa BRELA, ushauri wa kodi wa TRA, warsha za elimu ya fedha, au mifumo ya kidijitali — ofisi yetu ya Arusha na timu zetu za mikoani zipo tayari.",
                     "cta.btnNow": "Ongea na Mshauri Sasa",
 
-                    "ft.desc": "SMARTI CENTS imejitolea kuwawezesha vijana na wafanyabiashara wa Tanzania kupitia elimu ya fedha, ushauri wa kibiashara, kukuza taaluma, ulezi wa biashara na ubunifu wa kidijitali.",
-                    "ft.quickLinks": "Viungo vya Haraka",
+                    "ft.desc": "Smarti Cent$ imejitolea kuwawezesha vijana na wajasiriamali Watanzania kupitia Elimu ya Fedha, Ushauri wa Biashara, Kukuza Taaluma, Ulezi, na Ubunifu wa Kidijitali.",
+                    "ft.quickLinks": "Sehemu Muhimu",
                     "ft.services": "Huduma Zetu",
-                    "ft.contact": "Makao Makuu & Mawasiliano",
+                    "ft.contact": "Makao Makuu na Mawasiliano",
                     "ft.commitment": "Ushauri thabiti. Maamuzi bora. Fedha dhabiti. Mustakabali endelevu."
                 },
-                "fr": {
+                fr: {
                     "brand.tagline": "Autonomiser votre avenir financier",
-                    "nav.whoWeAre": "1. Qui Nous Sommes",
-                    "nav.whatWeDo": "2. Ce Que Nous Faisons",
-                    "nav.whereWeWork": "3. Où Nous Travaillons",
-                    "nav.newsStories": "4. Actualités & Histoires",
-                    "nav.getInvolved": "5. Participer",
-                    "nav.sub.profile": "Nom & Profil Institutionnel",
+                    "nav.whoWeAre": "Qui Nous Sommes",
+                    "nav.whatWeDo": "Ce Que Nous Faisons",
+                    "nav.whereWeWork": "Où Nous Travaillons",
+                    "nav.newsStories": "Actualités & Histoires",
+                    "nav.getInvolved": "Participer",
+                    "nav.sub.profile": "Nom & Profil",
                     "nav.sub.vision": "Notre Vision",
                     "nav.sub.mission": "Notre Mission",
                     "nav.sub.values": "Nos Valeurs",
                     "nav.sub.history": "Notre Histoire",
                     "nav.sub.finlit": "Éducation Financière",
                     "nav.sub.consult": "Conseil d'Entreprise",
-                    "nav.sub.career": "Développement Professionnel",
-                    "nav.sub.entrep": "Entrepreneuriat",
-                    "nav.sub.mentor": "Mentorat",
+                    "nav.sub.career": "Développement de Carrière",
+                    "nav.sub.entrepreneurship": "Entrepreneuriat",
+                    "nav.sub.mentorship": "Mentorat",
                     "nav.sub.digital": "Innovation Numérique",
-                    "nav.sub.hq": "Siège d'Arusha",
-                    "nav.sub.regions": "Régions de Tanzanie",
+                    "nav.sub.hq": "Siège: Arusha",
+                    "nav.sub.regions": "Toutes les Régions de Tanzanie",
                     "nav.sub.matangazo": "Annonces",
                     "nav.sub.testimonials": "Témoignages",
                     "nav.sub.mgmt": "Mot de la Direction",
@@ -4784,134 +4418,117 @@
                     "nav.sub.workWithUs": "Travailler Avec Nous",
                     "nav.sub.partnership": "Partenariat",
                     "cta.fixNow": "Réglez-le Maintenant",
-                    "hq.short": "Siège: Business Startup Center, Njiro, Tanzanie • Présence Nationale",
+                    "hq.short": "Siège: Business Startup Center, Njiro, Tanzanie · Présence Nationale",
 
-                    "hero.badge1": "Grandir en Toute Confiance",
-                    "hero.badge2": "Siège Arusha • Portée Nationale",
+                    "hero.badge1": "Nous Vous Aidons à Grandir en Confiance",
+                    "hero.badge2": "Siège Arusha · Présence Nationale",
                     "hero.title1": "Autonomiser Votre",
                     "hero.title2": "Avenir Financier.",
-                    "hero.sub": "SMARTI CENTS est une organisation d'éducation financière et de conseil aux entreprises dédiée à l'autonomisation des jeunes, étudiants, entrepreneurs et PME grâce à des formations pratiques, au développement entrepreneurial et à des solutions numériques.",
-                    "hero.btnServices": "Explorer les Services",
+                    "hero.sub": "Conseil judicieux. Meilleures décisions. Finances solides. Avenir durable. Vos objectifs, notre engagement. Pour la jeunesse et les entreprises à travers la Tanzanie.",
+                    "hero.btnServices": "Découvrir Nos Services",
                     "hero.btnTouch": "Contactez-Nous Aujourd'hui",
-                    "hero.statRegions": "Régions de Tanzanie",
-                    "hero.statYouth": "Jeunes Touchés Directement",
-                    "hero.statBiz": "PME Consultées",
-                    "hero.statEmpowered": "PME Autonomisées",
-                    "hero.pillarTitle": "Centre de Croissance & Savoir",
-                    "hero.cardHeadline": "Pourquoi SMARTI CENTS?",
-                    "hero.cardSub": "Nous transformons les complexités financières et réglementaires en plans d'action simples pour créer une prospérité durable.",
-                    "hero.v1Title": "Éducation Financière Pratique",
-                    "hero.v1Desc": "Budgétisation, planification financière, gestion des PME et sensibilisation financière.",
-                    "hero.v2Title": "Croissance d'Entreprise & Mentorat",
-                    "hero.v2Desc": "Transformer les compétences professionnelles en entreprises durables et rentables.",
-                    "hero.v3Title": "Solutions Numériques Intelligentes",
-                    "hero.v3Desc": "Applications budgétaires, automatisation et outils stimulant la croissance économique.",
+                    "hero.statRegions": "Régions en Tanzanie",
+                    "hero.statYouth": "Personnes Autonomisées",
+                    "hero.statBiz": "Entreprises Conseillées",
+                    "hero.pillarTitle": "Pôle de Croissance et Éducation",
+                    "hero.cardHeadline": "Pourquoi Smarti Cent$?",
+                    "hero.cardSub": "Nous transformons les complexités financières et réglementaires en leviers de prospérité durable.",
+                    "hero.v1Title": "Conseil Judicieux et Orientation",
+                    "hero.v1Desc": "Des solutions pragmatiques pour la trésorerie personnelle et professionnelle.",
+                    "hero.v2Title": "Finances Solides & Conformité",
+                    "hero.v2Desc": "De l'enregistrement (BRELA) à la conformité fiscale (TRA) et aux prévisions.",
+                    "hero.v3Title": "Vos Objectifs, Notre Engagement",
+                    "hero.v3Desc": "Un mentorat dédié qui stimule la croissance et la résilience durable.",
 
                     "sec1.badge": "Section 1",
                     "sec1.title": "Qui Nous Sommes",
-                    "sec1.desc": "Découvrez SMARTI CENTS: notre profil institutionnel, notre vision, nos valeurs et notre parcours depuis Arusha à travers la Tanzanie.",
-                    "sec1.profTitle": "Nom & Profil Institutionnel",
-                    "sec1.profText1": "SMARTI CENTS est une organisation d'éducation financière et de conseil aux entreprises dédiée à l'autonomisation des jeunes, des étudiants, des entrepreneurs et des PME grâce à une éducation financière pratique, au développement entrepreneurial et à des solutions d'affaires numériques.",
-                    "sec1.profText2": "Notre expertise se concentre sur la budgétisation, la planification financière, la gestion des PME, le conseil d'affaires, la formation à l'entrepreneuriat, le mentorat de startups et les programmes de sensibilisation financière. Nous aidons à transformer les compétences techniques en entreprises rentables.",
-                    "sec1.profText3": "SMARTI CENTS favorise également l'innovation et la transformation numérique en soutenant le développement d'outils financiers intelligents, d'applications budgétaires et de solutions de gestion d'entreprise pour renforcer la discipline financière et la productivité.",
+                    "sec1.desc": "Découvrez Smarti Cent$ — notre profil institutionnel, notre vision, nos valeurs et notre parcours depuis Arusha à travers la Tanzanie.",
+                    "sec1.profTitle": "Nom & Profil de l'Organisation",
+                    "sec1.profText1": "Smarti Cent$ est une initiative de référence en Tanzanie dédiée au conseil et au renforcement des capacités financières, juridiques et numériques des jeunes et entrepreneurs.",
+                    "sec1.profText2": "Guidée par la philosophie 'Empowering your financial future', Smarti Cent$ comble le fossé entre les petites entreprises et le système financier formel.",
                     "sec1.visTitle": "Notre Vision",
-                    "sec1.visText": "Bâtir une société financièrement instruite et économiquement autonome à travers toute la Tanzanie.",
+                    "sec1.visText": "Être le premier catalyseur en Tanzanie et en Afrique de l'Est pour l'indépendance financière, l'entrepreneuriat et la création de richesse durable.",
                     "sec1.misTitle": "Notre Mission",
-                    "sec1.misText": "Fournir des solutions inclusives et pratiques d'accessibilité financière et de renforcement des capacités permettant aux individus et entreprises de prendre des décisions éclairées, de pérenniser leurs finances et de créer une valeur économique durable.",
+                    "sec1.misText": "Doter les populations de compétences pratiques en gestion d'argent, fiscalité, et numérique pour bâtir un avenir prospère.",
                     "sec1.valHeading": "Nos Valeurs Fondamentales",
-                    "sec1.valSub": "Des principes d'excellence: discipline, transparence et vision à long terme.",
-                    "val.v1": "Intelligence Financière Plutôt que l'Illusion",
-                    "val.v1Desc": "L'argent est un système, pas une loterie. Nous promouvons la pensée structurée, des décisions éclairées et une allocation rigoureuse du capital sans raccourcis.",
-                    "val.v2": "Responsabilité Absolue",
-                    "val.v2Desc": "Revenus, dettes, épargne et investissements relèvent de la responsabilité individuelle. La confiance est notre monnaie la plus précieuse.",
-                    "val.v3": "Éducation Pratique",
-                    "val.v3Desc": "La théorie sans application n'est que bruit. Nous privilégions les outils directement applicables pour un changement de comportement durable.",
-                    "val.v4": "Orientation Long Terme",
-                    "val.v4Desc": "Nous raisonnons en décennies, pas en jours de paie. La richesse se bâtit dans la constance et la patience stratégique.",
-                    "val.v5": "Discipline & Régularité",
-                    "val.v5Desc": "La croissance financière est une discipline quotidienne: budgétiser, suivre, réinvestir et apprendre sans relâche.",
-                    "val.v6": "Autonomie par le Savoir",
-                    "val.v6Desc": "L'éducation financière est un levier. Maîtriser l'argent permet de mieux négocier, d'investir intelligemment et de consolider son entreprise.",
-                    "val.v7": "Croissance Communautaire",
-                    "val.v7Desc": "Nous progressons en élevant les autres. SMARTI CENTS cultive l'entraide, le partage et l'engagement mutuel.",
-
-                    "sec1.hisHeading": "Notre Histoire & Évolution",
+                    "val.v1": "Intégrité",
+                    "val.v1Desc": "Transparence et honnêteté dans tous nos conseils financiers et juridiques.",
+                    "val.v2": "Excellence",
+                    "val.v2Desc": "Exigence supérieure dans nos formations d'entreprise et interventions.",
+                    "val.v3": "Autonomisation",
+                    "val.v3Desc": "Donner aux jeunes les clés de leur destinée économique.",
+                    "val.v4": "Innovation",
+                    "val.v4Desc": "Technologies numériques modernes et agilité de gestion.",
+                    "val.v5": "Durabilité",
+                    "val.v5Desc": "Bâtir des modèles économiques résilients et pérennes.",
+                    "sec1.hisHeading": "Notre Histoire et Notre Évolution",
                     "his.m1Title": "Création au Business Startup Center Njiro",
-                    "his.m1Desc": "Fondée en 2025 au Business Startup Center de Njiro, Arusha, afin de bâtir un pôle dédié à l'autonomie des jeunes et des entrepreneurs.",
-                    "his.m2Title": "Développement des PME & Conformité",
-                    "his.m2Desc": "Extension de l'accompagnement juridique: immatriculations BRELA, formalités fiscales TRA et conformité réglementaire.",
-                    "his.m3Title": "Outils d'Innovation Numérique",
-                    "his.m3Desc": "Lancement d'outils numériques de comptabilité et de tableaux de bord financiers pour les entrepreneurs des différentes régions.",
-                    "his.m4Title": "Rayonnement National",
-                    "his.m4Desc": "Consolidation du siège à Njiro tout en accompagnant des porteurs de projets dans l'ensemble des 31 régions de Tanzanie.",
+                    "his.m1Desc": "Fondé en 2025 au Business Startup Center à Njiro, Arusha, Tanzanie, pour autonomiser les jeunes et entrepreneurs avec des compétences financières et d'affaires.",
+                    "his.m2Title": "Expansion Entreprise & Conformité",
+                    "his.m2Desc": "Mise en place de pôles dédiés à l'enregistrement des sociétés (BRELA) et au conseil fiscal (TRA).",
+                    "his.m3Title": "Outils Numériques",
+                    "his.m3Desc": "Lancement de tableaux de bord financiers numériques et d'outils de comptabilité automatisée.",
+                    "his.m4Title": "Présence Nationale",
+                    "his.m4Desc": "Siège basé au Business Startup Center, Njiro, Arusha avec des activités dans les 31 régions de Tanzanie.",
 
                     "sec2.badge": "Section 2",
                     "sec2.title": "Ce Que Nous Faisons",
-                    "sec2.desc": "Nos 6 piliers majeurs conçus pour apporter un soutien complet aux porteurs de projets et aux entreprises.",
+                    "sec2.desc": "Nos 6 piliers fondamentaux issus de l'affiche officielle Smarti Cent$ pour vous accompagner à chaque étape.",
                     "srv.finTitle": "Éducation Financière",
-                    "srv.finDesc": "Transmettre les clés indispensables de gestion budgétaire pour sécuriser l'avenir des familles et des entreprises.",
+                    "srv.finDesc": "Acquérir les compétences essentielles en gestion d'argent pour bâtir un patrimoine durable.",
                     "srv.finB1": "Stratégies de gestion de trésorerie",
-                    "srv.finB2": "Budgétisation personnelle et d'entreprise",
-                    "srv.finB3": "Planification d'investissements et patrimoine",
-                    "srv.finB4": "Conseil personnalisé et institutionnel",
+                    "srv.finB2": "Budget pour entreprises et particuliers",
+                    "srv.finB3": "Planification d'investissement et patrimoine",
+                    "srv.finB4": "Conseil personnalisé et d'entreprise",
                     "srv.bizTitle": "Conseil d'Entreprise",
-                    "srv.bizDesc": "Accompagnement intégral: création de société, mise en conformité et optimisation opérationnelle pour faire grandir votre entreprise.",
+                    "srv.bizDesc": "Création de structures, conformité réglementaire et optimisation opérationnelle.",
                     "srv.bizB1": "Enregistrement d'entreprises (BRELA)",
-                    "srv.bizB2": "Plans d'affaires stratégiques et études de marché",
-                    "srv.bizB3": "Gestion opérationnelle et ressources humaines",
-                    "srv.bizB4": "Conformité fiscale (TRA, déclarations de TVA)",
-                    "srv.carTitle": "Développement Professionnel",
-                    "srv.carDesc": "Permettre aux professionnels d'acquérir les compétences recherchées, des repères de leadership et des opportunités d'avancement.",
-                    "srv.carB1": "Formations d'entreprise et ateliers d'équipe",
-                    "srv.carB2": "Feuilles de route pour l'évolution de carrière",
-                    "srv.carB3": "Leadership et compétences relationnelles",
-                    "srv.carB4": "Certifications professionnelles valorisantes",
+                    "srv.bizB2": "Conseiller stratégique et plan d'affaires",
+                    "srv.bizB3": "Support RH et organisation d'équipes",
+                    "srv.bizB4": "Conformité fiscale (TRA, TVA, déclarations)",
+                    "srv.carTitle": "Développement de Carrière",
+                    "srv.carDesc": "Former les professionnels aux compétences les plus recherchées et au leadership.",
+                    "srv.carB1": "Formations d'entreprise et ateliers",
+                    "srv.carB2": "Guide de croissance et plans de carrière",
+                    "srv.carB3": "Compétences de leadership et direction",
+                    "srv.carB4": "Certifications professionnelles reconnues",
                     "srv.entTitle": "Entrepreneuriat",
-                    "srv.entDesc": "Convertir des concepts prometteurs en entreprises rentables grâce à la méthodologie lean et la validation de marché.",
-                    "srv.entB1": "Modèles agiles et validation lean",
-                    "srv.entB2": "Pérennité et résilience commerciale",
-                    "srv.entB3": "Clés de croissance et expansion des ventes",
-                    "srv.entB4": "Élaboration de pitchs pour investisseurs",
+                    "srv.entDesc": "Transformer des idées novatrices en entreprises rentables grâce à des méthodes éprouvées.",
+                    "srv.entB1": "Guide d'innovation et modèles lean startup",
+                    "srv.entB2": "Durabilité et résilience de marché",
+                    "srv.entB3": "Conseils d'expansion et hausse de revenus",
+                    "srv.entB4": "Préparation au pitch et levée de fonds",
                     "srv.menTitle": "Mentorat",
-                    "srv.menDesc": "Accompagnement individualisé mené par des dirigeants expérimentés pour guider les fondateurs.",
-                    "srv.menB1": "Coaching individuel pour fondateurs (one on one)",
-                    "srv.menB2": "Cercles d'échange entre entrepreneurs",
+                    "srv.menDesc": "Accompagnement individuel par des dirigeants chevronnés pour surmonter les défis.",
+                    "srv.menB1": "Coaching individuel pour fondateurs (1-on-1)",
+                    "srv.menB2": "Cercles de pairs et partages d'expériences",
                     "srv.menB3": "Mentorat pour jeunes et femmes entrepreneures",
                     "srv.menB4": "Suivi des objectifs et responsabilisation",
                     "srv.digTitle": "Innovation Numérique",
-                    "srv.digDesc": "Exploiter le numérique pour automatiser la gestion, suivre les comptes en temps réel et conquérir de nouveaux marchés.",
-                    "srv.digB1": "Solutions logicielles et transition numérique",
-                    "srv.digB2": "Outils automatisés de gestion budgétaire",
-                    "srv.digB3": "Facturation électronique et paiements mobiles",
-                    "srv.digB4": "Protection des données et sauvegarde sécurisée",
+                    "srv.digDesc": "Automatiser les processus d'affaires et suivre la comptabilité en temps réel avec des outils modernes.",
+                    "srv.digB1": "Solutions numériques et automatisation",
+                    "srv.digB2": "Tableaux de bord financiers et analytique",
+                    "srv.digB3": "Gestion des stocks et ressources",
+                    "srv.digB4": "Logiciels de comptabilité cloud et CRM",
 
-                    "trac.badge": "Traction & Résultats",
-                    "trac.title": "Notre Impact Mesurable",
-                    "trac.desc": "Notre travail n'est pas théorique. Il est concret, mesurable et ancré au cœur des communautés.",
-                    "trac.s1Title": "Jeunes Touchés Directement",
-                    "trac.s1Desc": "Dans les universités et plateformes communautaires grâce à des sessions de formation et des bootcamps.",
-                    "trac.s2Title": "PME Autonomisées",
-                    "trac.s2Desc": "Au sein de notre communauté grâce à des séances de conseil sur mesure et un appui opérationnel.",
-                    "trac.s3Title": "PME Soutenues en Conseil",
-                    "trac.s3Desc": "Accompagnées pour surmonter les tensions de trésorerie, la fiscalité et la stratégie de tarification.",
-                    "trac.cap1": "Sessions de mentorat et de formation avec les étudiants et jeunes créateurs d'entreprise.",
-                    "trac.cap2": "Bootcamps immersifs transmettant des cadres pratiques de gestion financière et d'affaires.",
-                    "trac.question": "La question est simple: Pourquoi pas vous?",
-
-                    "banner.title": "Contactez-nous aujourd'hui,",
-                    "banner.strong": "RÉGLONS CELA MAINTENANT.",
-                    "banner.btn": "CONTACTER UN CONSEILLER",
+                    "banner.h3": "NOUS VOUS AIDONS À GRANDIR EN CONFIANCE.",
+                    "banner.sub": "Résolvons vos incertitudes financières, démarches d'enregistrement et défis de croissance dès aujourd'hui.",
+                    "banner.p1": "Conseil judicieux.",
+                    "banner.p2": "Meilleures décisions.",
+                    "banner.p3": "Finances solides.",
+                    "banner.p4": "Avenir durable.",
+                    "banner.btn": "CONTACTEZ-NOUS AUJOURD'HUI",
 
                     "sec3.badge": "Section 3",
                     "sec3.title": "Où Nous Travaillons",
-                    "sec3.desc": "Établis au cœur d'Arusha, nous intervenons également sur le terrain et à distance dans toutes les régions de Tanzanie.",
+                    "sec3.desc": "Basés au cœur d'Arusha, avec des interventions sur le terrain et à distance dans toutes les régions de Tanzanie.",
                     "hq.tag": "Siège",
                     "hq.title": "Siège d'Arusha (HQ)",
                     "hq.subtitle": "Opérations Centrales et Pôle d'Innovation",
                     "hq.locTitle": "Adresse Physique",
-                    "hq.locDesc": "@ IBUSC, IAA Arusha Njiro, Tanzanie",
+                    "hq.locDesc": "Business Startup Center, Njiro, Arusha, Tanzanie",
                     "hq.hoursTitle": "Heures d'Ouverture",
-                    "hq.hoursDesc": "Lundi à Vendredi: 08h30 à 17h30 (EAT) | Samedi: 09h00 à 13h00",
+                    "hq.hoursDesc": "Lundi – Vendredi: 08h30 – 17h30 (EAT) | Samedi: 09h00 – 13h00",
                     "hq.contactTitle": "Ligne Directe & WhatsApp",
                     "hq.mailTitle": "Email Officiel",
                     "hq.btnBook": "Prendre Rendez-vous au Siège",
@@ -4936,38 +4553,28 @@
                     "ann.tagClinic": "Clinique Fiscale",
                     "ann.tagGrant": "Journée Pitch",
                     "ann.t1": "Masterclass Financière Jeunesse à Arusha",
-                    "ann.d1": "Formation intensive de trois jours sur la budgétisation, l'investissement et la tenue de comptes.",
+                    "ann.d1": "Formation intensive de 3 jours sur la budgétisation, l'investissement et la tenue de comptes.",
                     "ann.t2": "Semaine de Conformité Légale & Fiscale",
-                    "ann.d2": "Audit gratuit d'une demi-heure pour PME nécessitant une mise en conformité fiscale et renouvellement de licences.",
+                    "ann.d2": "Audit gratuit et accompagnement aux déclarations annuelles pour PME.",
                     "ann.t3": "Forum de Croissance des PME de Tanzanie",
                     "ann.d3": "Mise en relation d'entrepreneurs de Dodoma, Mwanza et Dar es Salaam avec des investisseurs.",
-                    "tst.q1": "SMARTI CENTS a pris en charge tout l'enregistrement BRELA et notre fiscalité TRA en quelques jours. Leurs outils de suivi nous ont permis de quadrupler nos ventes sans tracas!",
-                    "tst.q2": "En tant que jeune diplômée, leur formation de carrière m'a permis d'acquérir l'état d'esprit et les réflexes pour décrocher mon poste d'analyste. SMARTI CENTS change des vies!",
-                    "tst.q3": "Leur mentorat d'entreprise a permis à nos magasins de Mwanza d'optimiser les stocks et la rentabilité. 'Let's fix it now' est une réalité tangible chez eux.",
-                    "mgmt.h3": "L'autonomie financière est le socle de la liberté",
-                    "mgmt.p1": "Chez SMARTI CENTS, notre mission repose sur une certitude: chacun mérite des outils clairs pour prendre en main son avenir économique.",
+                    "tst.q1": "\"Smarti Cent$ a pris en charge tout l'enregistrement BRELA et notre fiscalité TRA en quelques jours. Leurs outils de suivi nous ont permis de quadrupler nos ventes sans tracas!\"",
+                    "tst.q2": "\"En tant que jeune diplômée, leur formation de carrière m'a permis d'acquérir l'état d'esprit et les réflexes pour décrocher mon poste d'analyste. Smarti Cent$ change des vies!\"",
+                    "tst.q3": "\"Leur mentorat d'entreprise a permis à nos magasins de Mwanza d'optimiser les stocks et la rentabilité. 'Let's fix it now' est une réalité tangible chez eux.\"",
+                    "mgmt.h3": "\"L'autonomie financière est le socle de la liberté\"",
+                    "mgmt.p1": "Chez Smarti Cent$, notre mission repose sur une certitude : chacun mérite des outils clairs pour prendre en main son avenir économique.",
                     "mgmt.p2": "Tant d'initiatives échouent par manque de repères fiscaux et de maîtrise des flux de trésorerie. C'est pourquoi nous sommes là pour résoudre ces défis avec vous.",
-                    "mgmt.quote": "Un conseil judicieux permet de meilleures décisions. De meilleures décisions bâtissent des finances solides et un avenir durable.",
-                    "mgmt.teamBadge": "Direction & Gouvernance",
-                    "mgmt.teamTitle": "Équipe de Direction",
-                    "mgmt.teamDesc": "SMARTI CENTS s'appuie sur une équipe dévouée de six professionnels combinant expertises en finance, conseil, recherche, relations clients et stratégie. Notre ambition commune: apporter une transformation financière mesurable à chaque bénéficiaire.",
-                    "team.klein": "Directeur Principal (Chief Director)",
-                    "team.masuke": "Administrateur Exécutif",
-                    "team.haitham": "Responsable Communication & Informatique",
-                    "team.raheali": "Administratrice Financière",
-                    "team.ally": "Administrateur des Opérations",
-                    "team.ndazi": "Administrateur Financier",
-
+                    "mgmt.quote": "\"Un conseil judicieux permet de meilleures décisions. De meilleures décisions bâtissent des finances solides et un avenir durable.\"",
                     "pub.t1": "Rapport sur la Santé Financière des PME 2026",
                     "pub.d1": "Étude approfondie sur la gestion de liquidités et la conformité chez plus de 1 000 entreprises.",
                     "pub.t2": "Guide de Démarrage BRELA & TRA en Tanzanie",
-                    "pub.d2": "Démarches étape par étape pour l'enregistrement de sociétés, licences commerciales et exonérations.",
+                    "pub.d2": "Démarches pas-à-pas pour l'enregistrement de sociétés, licences commerciales et exonérations.",
                     "pub.t3": "Manuel Pratique d'Éducation Financière",
                     "pub.d3": "Modèles de budget et guides d'investissement adaptés aux familles et jeunes professionnels.",
                     "pub.btn": "Télécharger le Document",
 
                     "sec5.badge": "Section 5",
-                    "sec5.title": "Participer",
+                    "sec5.title": "Participer (Get Involved)",
                     "sec5.desc": "Rejoignez notre action pour bâtir l'avenir économique de la Tanzanie. Opportunités d'emploi, stages et partenariats.",
                     "inv.workTitle": "Travailler Avec Nous",
                     "inv.workDesc": "Nous recherchons des formateurs passionnés, analystes financiers et juristes motivés par l'impact positif.",
@@ -4977,7 +4584,7 @@
                     "inv.w4": "Mentors bénévoles pour nos cliniques locales",
                     "inv.btnApply": "Postuler Pour Rejoindre l'Équipe",
                     "inv.partTitle": "Partenariat",
-                    "inv.partDesc": "Associez-vous à SMARTI CENTS pour co-construire des projets RSE et d'inclusion financière à grande échelle.",
+                    "inv.partDesc": "Associez-vous à Smarti Cent$ pour co-construire des projets RSE et d'inclusion financière à grande échelle.",
                     "inv.p1": "Banques et Institutions Financières",
                     "inv.p2": "ONG Internationales et Agences de Développement",
                     "inv.p3": "Collectivités Publiques et Administrations Régionales",
@@ -4988,7 +4595,7 @@
                     "cta.sub": "Pour l'enregistrement BRELA, le conseil fiscal TRA, nos ateliers ou nos outils de gestion, notre équipe est à votre disposition.",
                     "cta.btnNow": "Parler à un Conseiller",
 
-                    "ft.desc": "SMARTI CENTS s'engage à autonomiser les jeunes et entrepreneurs tanzaniens par l'éducation financière, le conseil d'affaires, le développement de carrière, le mentorat et l'innovation numérique.",
+                    "ft.desc": "Smarti Cent$ s'engage à autonomiser les jeunes et entrepreneurs tanzaniens par l'éducation financière, le conseil d'affaires, le développement de carrière, le mentorat et l'innovation numérique.",
                     "ft.quickLinks": "Sections Rapides",
                     "ft.services": "Nos Services",
                     "ft.contact": "Siège & Contact",
@@ -5024,7 +4631,7 @@
             const savedLang = localStorage.getItem('smarticents-lang') || 'en';
             applyI18n(savedLang);
 
-            console.log("SMARTI CENTS System Loaded with Advanced Hamburger & 5 Requirements Sections.");
+            console.log("Smarti Cent$ System Loaded with Advanced Hamburger & 5 Requirements Sections.");
         })();
     </script>
 </body>
